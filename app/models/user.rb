@@ -1,9 +1,12 @@
 class User < ActiveRecord::Base
-	
+
 	def self.find_or_create_with_omniauth(auth)
-		user = self.find_or_create_by_provider_and_uid(auth.provider, auth.uid)
-		user.assign_attributes({ name: auth.info.name, email: auth.info.email, photo_url: auth.info.image, access_token: auth.credentials.token })
-		user.save!
-		user
-	end
+		where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+    		user.email = auth.info.email
+    		/user.password = Devise.friendly_token[0,20]/
+    		user.name = auth.info.name   # assuming the user model has a name
+    		user.photo_url = auth.info.image # assuming the user model has an image
+    		user.access_token = auth.credentials.token
+    	end
+    end
 end

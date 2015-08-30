@@ -11,6 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150826030458) do
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name",         limit: 255
+    t.string   "email",        limit: 255
+    t.string   "cpf",          limit: 255
+    t.string   "phone",        limit: 255
+    t.string   "andress",      limit: 255
+    t.string   "password",     limit: 255
+    t.string   "access_token", limit: 255
+    t.string   "uid",          limit: 255
+    t.string   "photo_url",    limit: 255
+    t.string   "provider",     limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
 end
