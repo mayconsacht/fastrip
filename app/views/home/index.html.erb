@@ -15,17 +15,16 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
 
-    <!-- Custom Fonts -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
 </head>
 
-<body>
+<body id="page-top" class="index">
 
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container-fluid">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -33,146 +32,162 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Fastrip</a>
+                <a class="navbar-brand" href="#page-top">Fastrip</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="index.html">Procurar viagem</a>
+
+                    <li class="hidden">
+                        <a href="#toCompany"></a>
                     </li>
-                    <li>
-                        <a href="about.html">Cadastrar viagem</a>
+                    <li class="page-scroll">
+                        <a href="#toCompany">Para empresa</a>
                     </li>
-                    <li>
-                        <a href="post.html">Quem somos</a>
+                    <li class="page-scroll">
+                        <a href="#toTraveler">Para viajante</a>
                     </li>
-                    <li>
-                        <a href="contact.html">Fale conosco</a>
+                    <li class="page-scroll">
+                        <a href="#about">Sobre</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Contato</a>
                     </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
+        <!-- /.container-fluid -->
     </nav>
 
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below.--> 
-    <header class="intro-header" style="background-image: url('assets/home-bg')">
+    <!-- Portfolio Grid Section -->
+    <section class="success" id="toCompany">
+        <br><br><br>
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>Fastrip</h1>
-                        <!--<hr class="small">-->
-                        <span class="subheading">Encontre Aqui a Sua Viagem.</span>
-                    </div>
+                <div class="col-lg-12">
+                    <h2>Para empresa</h2>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="toTraveler">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Para viajante</h2>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Sobre</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p>Muito Prazer, sou Maycon Rafael Sacht, estudante de Bacharelado em Sistemas de Informação do Centro Universitário Católica de Santa Catarina. O Fastrip foi desenvolvido como proposta para o meu trabalho de conclusão de curso durante o ano de 2015.</p>
+                </div>
+                <div class="col-lg-4">
+                    <p>O objetivo do Fastrip é ser um canal centralizado de informações referentes a viagens onde tanto agências de viagens quanto usuários que estejam a procura de serviços oferecidos por estas agências possam ter agilidade no processo de contratação destes serviços. </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Contate-me</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                    <form method="post" name="sentMessage" id="contactForm" onsubmit="return validate()" action="mail/contact_me">
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Nome</label>
+                                <input type="text" class="form-control" placeholder="Nome" id="name" required data-validation-required-message="Por favor informe o seu nome.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Endereço de Email</label>
+                                <input type="email" name="emailz" class="form-control" placeholder="Endereço de Email" id="email" required data-validation-required-message="Por favor informe o seu endereço de email.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Número de Telefone</label>
+                                <input type="tel" class="form-control" placeholder="Número de Telefone" id="phone" required data-validation-required-message="Por favor informe o seu número de telefone.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Mensagem</label>
+                                <textarea rows="5" class="form-control" placeholder="Mensagem" id="message" required data-validation-required-message="Por favor informe uma mensagem."></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button type="submit" class="btn btn-success btn-lg" action="public_html/mail/contact_me.php">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </header>
-
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Man must explore, and this is exploration at its greatest
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Problems look mighty small from 150 miles up
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
-                        </h2>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 18, 2014</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Science has not yet mastered prophecy
-                        </h2>
-                        <h3 class="post-subtitle">
-                            We predict too much for the next year and yet far too little for the next ten.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Failure is not an option
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Many say exploration is part of our destiny, but it’s actually our duty to future generations.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on July 8, 2014</p>
-                </div>
-                <hr>
-                <!-- Pager -->
-                <ul class="pager">
-                    <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <hr>
+    </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted">&copy;2015 Maycon Sacht - Todos os direitos reservados.</p>
+    <footer class="text-center">
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        &copy; 2015 Maycon Sacht - Todos os direitos reservados.
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 </body>
 
 </html>

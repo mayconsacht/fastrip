@@ -12,7 +12,10 @@
 //
 //= require jquery
 //= require bootstrap
-//= require clean-blog
-//= require jquery_ujs
+//= require freelancer
+//= require cbpAnimatedHeader
+//= require classie
+//= require contact_me
+//= require jqBootstrapValidation
 //= require turbolinks
 //= require_tree .

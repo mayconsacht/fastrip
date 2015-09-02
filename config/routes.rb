@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   match '/logout' => 'sessions#destroy', via: [:get, :post], as: :logout
 
   match '/404' => 'erros#404', via: [:get, :post, :create, :delete]
+
+  get '/contact' => 'contact#index'
   
 end
