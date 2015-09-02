@@ -6,7 +6,7 @@ one:
   cpf: MyString
   phone: MyString
   andress: MyString
-  string: 
+  password: MyString
   access_token: MyString
   uid: MyString
   photo_url: MyString
@@ -18,7 +18,7 @@ two:
   cpf: MyString
   phone: MyString
   andress: MyString
-  string: 
+  password: MyString
   access_token: MyString
   uid: MyString
   photo_url: MyString
