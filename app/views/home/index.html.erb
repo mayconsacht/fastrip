@@ -84,7 +84,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Sobre</h2>
+                    <h2>Sobre</h2><br>
                 </div>
             </div>
             <div class="row">
@@ -108,43 +108,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <form method="post" name="sentMessage" id="contactForm" onsubmit="return validate()" action="mail/contact_me">
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Nome</label>
-                                <input type="text" class="form-control" placeholder="Nome" id="name" required data-validation-required-message="Por favor informe o seu nome.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Endereço de Email</label>
-                                <input type="email" name="emailz" class="form-control" placeholder="Endereço de Email" id="email" required data-validation-required-message="Por favor informe o seu endereço de email.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Número de Telefone</label>
-                                <input type="tel" class="form-control" placeholder="Número de Telefone" id="phone" required data-validation-required-message="Por favor informe o seu número de telefone.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Mensagem</label>
-                                <textarea rows="5" class="form-control" placeholder="Mensagem" id="message" required data-validation-required-message="Por favor informe uma mensagem."></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <br>
-                        <div id="success"></div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg" action="public_html/mail/contact_me.php">Enviar</button>
-                            </div>
-                        </div>
-                    </form>
+                    <%= render 'contacts/new' %>
                 </div>
             </div>
         </div>
