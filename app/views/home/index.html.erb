@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
 
@@ -58,42 +58,28 @@
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container-fluid -->
     </nav>
 
-    <!-- Portfolio Grid Section -->
     <section class="success" id="toCompany">
         <br><br><br>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Para empresa</h2>
-                </div>
-            </div>
-            <div class="row">
-            <%= render 'users/new' %>
+        <div class="container">            
+            <div class="row col-lg-12">
+                <h2>Para empresa</h2><br>
+                <%= render 'companies/new' %>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="toTraveler">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Para viajante</h2>
-                </div>
-            </div>
-            <div class="row">
-
+            <div class="row col-lg-12">
+                <h2>Para viajante</h2><br>
+                <%= render 'users/new' %>
             </div>
         </div>
     </section>
 
-
-    <!-- About Section -->
     <section class="success" id="about">
         <div class="container">
             <div class="row">
@@ -113,7 +99,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <div class="row">
@@ -123,8 +108,6 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
                     <form method="post" name="sentMessage" id="contactForm" onsubmit="return validate()" action="mail/contact_me">
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">

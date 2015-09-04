@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
 
   def index
-    @user = User.all
+    @user = User.new
+    @company = Company.new
   end
 
 end

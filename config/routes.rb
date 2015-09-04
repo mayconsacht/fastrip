@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :companies
   resources :users
   root :to => 'home#index'
   get 'ops', to: 'ops#index'

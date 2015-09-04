@@ -1,10 +1,10 @@
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
+<%= form_for(@company) do |f| %>
+  <% if @company.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
 
       <ul>
-      <% @user.errors.full_messages.each do |message| %>
+      <% @company.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -13,47 +13,48 @@
 
   <div class="row control-group">
     <div class="field col-xs-4 form-group controls">
-      <%= f.label :name%><br>
-      <%= f.text_field :name, class: 'form-control', placeholder: 'Nome Completo'%>
+      <%= f.label :name %><br>
+      <%= f.text_field :name, class: 'form-control', placeholder: 'Nome da Empresa'%>
     </div>
   </div>
-
+  
   <div class="row control-group">
     <div class="field col-xs-4 form-group controls">
-      <%= f.label :email %><br>
-      <%= f.text_field :email, class: 'form-control', placeholder: 'Endereço de Email'%>
+        <%= f.label :email %><br>
+        <%= f.text_field :email, class: 'form-control', placeholder: 'Endereço de E-mail'%>
     </div>
   </div>
-
+  
   <div class="row control-group">
     <div class="field col-xs-4 form-group controls">
-      <%= f.label :cpf %><br>
-      <%= f.text_field :cpf, class: 'form-control', placeholder: 'CPF'%>
+      <%= f.label :cnpj %><br>
+      <%= f.text_field :cnpj, class: 'form-control', placeholder: 'CNPJ'%>
     </div>
   </div>
-
+  
   <div class="row control-group">
     <div class="field col-xs-4 form-group controls">
       <%= f.label :phone %><br>
       <%= f.text_field :phone, class: 'form-control', placeholder: 'Número de Telefone'%>
     </div>
   </div>
-
+  
   <div class="row control-group">
     <div class="field col-xs-4 form-group controls">
       <%= f.label :andress %><br>
       <%= f.text_field :andress, class: 'form-control', placeholder: 'Endereço completo'%>
     </div>
   </div>
-
+  
   <div class="row control-group">
     <div class="field col-xs-4 form-group controls">
       <%= f.label :password %><br>
       <%= f.text_field :password, class: 'form-control', placeholder: 'Senha'%>
     </div>
   </div>
-
+    
   <div class="actions">
-    <%= f.submit 'Cadastrar', class: 'btn btn-danger bt-lg'%>
+    <%= f.submit 'Cadastrar', class: 'btn btn-danger bt-lg' %>
   </div>
+
 <% end %>
