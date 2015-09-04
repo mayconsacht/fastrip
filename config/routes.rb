@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   match '/404' => 'erros#404', via: [:get, :post, :create, :delete]
 
   get '/contact' => 'contact#index'
-  
+  get '/user' => 'users#new'
+  get '/company' => 'companies#new'
+
 end
