@@ -26,6 +26,9 @@ gem 'omniauth-facebook'
 #Send e-mail
 gem 'mail_form'
 
+gem 'devise'
+
+
 group :development, :test do
   gem 'byebug'
 end

@@ -2,7 +2,7 @@ body {
     overflow-x: hidden;
 }
 
-p {
+p.about-description {
     font-size: 20px;
 }
 
@@ -228,10 +228,6 @@ section.success a.active {
     color: #18bc9c;
 }
 
-form .row:first-child .floating-label-form-group {
-    border-top: 1px solid #eee;
-}
-
 footer {
     color: #fff;
 }
@@ -290,4 +286,24 @@ footer .footer-below {
 
 .scroll-top .btn:focus {
     outline: 0;
+}
+
+.login {
+    padding-top: 10%;
+    padding-left: 40%;
+}
+
+.registration {
+    padding-top: 10%;
+    padding-left: 40%;
+}
+
+.alter-user {
+    padding-top: 10%;
+    padding-left: 40%;   
+}
+
+#toTraveler {
+    padding-top: 10%;
+    min-height: 100%;
 }

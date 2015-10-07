@@ -1,0 +1,73 @@
+<%= form_for(@trip) do |f| %>
+  <% if @trip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
+
+      <ul>
+      <% @trip.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row control-group">
+    <div class="field col-xs-4 form-group controls">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <div class="row control-group">
+    <div class="field col-xs-4 form-group controls">
+      <%= f.label :origin %><br>
+      <%= f.text_field :origin %>
+    </div>
+  </div>
+
+  <div class="row control-group">
+    <div class="field col-xs-4 form-group controls">
+      <%= f.label :destination %><br>
+      <%= f.text_field :destination %>
+    </div>
+  </div>
+
+  <div class="row control-group">
+    <div class="field col-xs-4 form-group controls">
+      <%= f.label :price %><br>
+      <%= f.text_field :price %>
+    </div>
+  </div>
+
+  <div class="row control-group">
+    <div class="field col-xs-4 form-group controls">
+      <%= f.label :in_date %><br>
+      <%= f.datetime_select :in_date %>
+    </div>
+  </div>
+
+  <div class="row control-group">
+    <div class="field col-xs-4 form-group controls">
+      <%= f.label :out_date %><br>
+      <%= f.datetime_select :out_date %>
+    </div>
+  </div>
+  
+  <div class="row control-group">
+    <div class="field col-xs-4 form-group controls">
+      <%= f.label :type %><br>
+      <%= f.text_field :type %>
+    </div>
+  </div>
+
+  <div class="row control-group">
+    <div class="field col-xs-4 form-group controls">
+      <%= f.label :description %><br>
+      <%= f.text_area :description %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

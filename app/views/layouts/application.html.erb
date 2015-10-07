@@ -41,26 +41,32 @@
 	                    <li class="hidden">
 	                        <a href="/"></a>
 	                    </li>
-	                    <li>
-	                        <a href="company">Para viajante</a>
-	                    </li>
-	                    <li>
-	                        <a href="user">Para agência</a>
+	                    <li class="page-scroll">
+	                        <a href="#toTraveler">Buscar viagens</a>
 	                    </li>
 	                    <li class="page-scroll">
-	                        <a href="/#about">Sobre</a>
+	                        <a href="#toCompany">Ofertar viagens</a>
 	                    </li>
 	                    <li class="page-scroll">
-	                        <a href="/#contact">Contato</a>
+	                        <a href="#about">Sobre</a>
+	                    </li>
+	                    <li class="page-scroll">
+	                    	<% if user_signed_in? %>
+	                    		Bem vindo <strong><%= current_user.email %></strong>!
+	                    		<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> 
+          						<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+	                    	<% else %>
+	                    		<%= link_to "Entrar", new_user_session_path, :class => 'navbar-link btn btn-info bt-lg'  %>
+	                    	<% end %>
 	                    </li>
 	                </ul>
 	            </div>
 	        </div>
 	    </nav>
-
+	    
 	    <%= yield %>
 
-	    <footer class="text-center">
+	    <footer class="footer-section text-center">
 	        <div class="footer-below">
 	            <div class="container">
 	                <div class="row">

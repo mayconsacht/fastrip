@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  origin: MyString
+  destination: MyString
+  price: 1.5
+  in-date: 2015-09-06 00:06:14
+  out-date: 2015-09-06 00:06:14
+  type: 
+  description: MyText
+
+two:
+  name: MyString
+  origin: MyString
+  destination: MyString
+  price: 1.5
+  in-date: 2015-09-06 00:06:14
+  out-date: 2015-09-06 00:06:14
+  type: 
+  description: MyText

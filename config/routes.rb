@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+  resources :trips
   resources :contacts
   resources :companies
   resources :users
+
   root :to => 'home#index'
   get 'ops', to: 'ops#index'
 
@@ -16,5 +19,6 @@ Rails.application.routes.draw do
   get '/contact' => 'contact#index'
   get '/user' => 'users#new'
   get '/company' => 'companies#new'
+  get '/sessions' => 'sessions#create'
 
 end
