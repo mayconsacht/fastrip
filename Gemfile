@@ -28,6 +28,7 @@ gem 'mail_form'
 
 gem 'devise'
 
+gem 'protected_attributes'
 
 group :development, :test do
   gem 'byebug'

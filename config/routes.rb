@@ -1,24 +1,15 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-  resources :trips
-  resources :contacts
+
+  devise_for :companies
+  devise_for :users, path_names: {sign_in: 'login', sign_out: 'logout'},
+                     controllers: {omniauth_callbacks: 'omniauth_callbacks'}
+  devise_scope :user do
+  	get 'users/logout' => 'devise/sessions#destroy'
+  end
+
   resources :companies
-  resources :users
 
   root :to => 'home#index'
-  get 'ops', to: 'ops#index'
-
-  #Auth facebook
-  match '/auth/:provider/callback' => 'sessions#create', via: [:get, :post], as: :auth_callback
-  match '/auth/failure' => 'sessions#failure', via: [:get, :post], as: :auth_failure
-  match '/logout' => 'sessions#destroy', via: [:get, :post], as: :logout
-
-  match '/404' => 'erros#404', via: [:get, :post, :create, :delete]
-
-  get '/contact' => 'contact#index'
-  get '/user' => 'users#new'
-  get '/company' => 'companies#new'
-  get '/sessions' => 'sessions#create'
 
 end

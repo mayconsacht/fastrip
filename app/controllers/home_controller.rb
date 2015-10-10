@@ -4,7 +4,6 @@ class HomeController < ApplicationController
   	@trip = Trip.new
     @user = User.new
     @company = Company.new
-    @contact = Contact.new
   end
 
 end

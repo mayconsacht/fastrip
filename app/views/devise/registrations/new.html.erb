@@ -1,3 +1,37 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Fastrip</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="hidden">
+                    <a href="/"></a>
+                </li>
+                <li class="page-scroll">
+                    <p class='it-menu'>
+                    <% if user_signed_in? %>
+                        Bem vindo <strong><%= current_user.email %></strong>!
+                        <%= link_to 'Edit profile', edit_user_registration_path %> 
+                        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+                    <% else %>
+                        <%= link_to "Entrar", new_user_session_path, :class => 'btn btn-outline bt-lg'  %>
+                    <% end %>
+                    <p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <div class='registration'>
     <h2>Cadastrar Usuário</h2>
 
@@ -18,7 +52,7 @@
 
       <div class="row control-group">
           <div class="field col-xs-4 form-group controls">
-              <%= f.phone_field :phone, class: 'form-control', placeholder: 'Telefone', autofocus: true %>
+              <%= f.text_field :phone, class: 'form-control', placeholder: 'Telefone', autofocus: true %>
           </div>
       </div>
 
@@ -33,7 +67,6 @@
               <%= f.email_field :email, class: 'form-control', placeholder: 'Email', autofocus: true %>
           </div>
       </div>
-
 
       <div class="row control-group">
           <div class="field col-xs-4 form-group controls">

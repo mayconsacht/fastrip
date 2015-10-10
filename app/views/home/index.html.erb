@@ -1,21 +1,57 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#page-top">Fastrip</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="hidden">
+                    <a href="/"></a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#toTraveler">Buscar viagens</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#toCompany">Ofertar viagens</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#about">Sobre</a>
+                </li>
+                <li class="page-scroll">
+                    <p class='it-menu'>
+                    <% if user_signed_in? %>
+                        Bem vindo <strong><%= current_user.name %></strong>!
+                        <%= link_to 'Edit profile', edit_user_registration_path %> 
+                        <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+                    <% else %>
+                        <%= link_to "Entrar", new_user_session_path, :class => 'btn btn-outline bt-lg'  %>
+                    <% end %>
+                    <p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <section id="toTraveler">
     <div class="container">
         <div class="row col-lg-12">
             <h2>Pesquisa</h2><br>
             <%= render 'trips/new' %>
-
-      <p class="navbar-text pull-right">
-        <% if not user_signed_in? %>
-          <%= button_to "Cadastre-se!", new_user_registration_path, :class => 'navbar-link btn-info'  %> |
-        <% end %>
-      </p>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
         </div>
     </div>
 </section>
 
-<section id="toCompany" class='conteudo'>
+<section id="toCompany" class=' success conteudo'>
     <div class="container">
         <div class="row col-lg-12">
             <h2>Para agência</h2><br>
@@ -24,7 +60,7 @@
     </div>
 </section>
 
-<section class="success" id="about">
+<section  id="about">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">

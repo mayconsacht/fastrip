@@ -54,7 +54,8 @@
   </div>
     
   <div class="actions">
-    <%= f.submit 'Cadastrar', class: 'btn btn-danger bt-lg' %>
+    <%= f.submit 'Cadastrar', class: 'btn btn-outline bt-lg' %>
+    <%= link_to "Conecte-se com facebook!", user_omniauth_authorize_path(:facebook), :class => 'btn btn-outline bt-lg' %>
   </div>
 
 <% end %>

@@ -11,31 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150929002246) do
+ActiveRecord::Schema.define(version: 20151010175627) do
 
   create_table "companies", force: :cascade do |t|
-    t.string   "name",         limit: 255
-    t.string   "email",        limit: 255
-    t.string   "cnpj",         limit: 255
-    t.string   "phone",        limit: 255
-    t.string   "andress",      limit: 255
-    t.string   "password",     limit: 255
-    t.string   "access_token", limit: 255
-    t.string   "uid",          limit: 255
-    t.string   "photo_url",    limit: 255
-    t.string   "provider",     limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "name",                   limit: 255
+    t.string   "cnpj",                   limit: 255
+    t.string   "phone",                  limit: 255
+    t.string   "andress",                limit: 255
+    t.string   "password",               limit: 255
+    t.string   "access_token",           limit: 255
+    t.string   "reset_password_token",   limit: 255
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
   end
 
-  create_table "contacts", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "email",      limit: 255
-    t.string   "phone",      limit: 255
-    t.string   "message",    limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
+  add_index "companies", ["email"], name: "index_companies_on_email", unique: true, using: :btree
+  add_index "companies", ["reset_password_token"], name: "index_companies_on_reset_password_token", unique: true, using: :btree
 
   create_table "trips", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 20150929002246) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
     t.string   "name",                   limit: 255
     t.string   "email",                  limit: 255
     t.string   "cpf",                    limit: 255
@@ -58,11 +60,7 @@ ActiveRecord::Schema.define(version: 20150929002246) do
     t.string   "andress",                limit: 255
     t.string   "password",               limit: 255
     t.string   "access_token",           limit: 255
-    t.string   "uid",                    limit: 255
     t.string   "photo_url",              limit: 255
-    t.string   "provider",               limit: 255
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
@@ -72,9 +70,17 @@ ActiveRecord::Schema.define(version: 20150929002246) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255
     t.string   "last_sign_in_ip",        limit: 255
+    t.string   "provider",               limit: 255
+    t.string   "uid",                    limit: 255
   end
 
+  add_index "users", ["access_token"], name: "index_users_on_access_token", using: :btree
+  add_index "users", ["andress"], name: "index_users_on_andress", using: :btree
+  add_index "users", ["cpf"], name: "index_users_on_cpf", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["name"], name: "index_users_on_name", using: :btree
+  add_index "users", ["phone"], name: "index_users_on_phone", using: :btree
+  add_index "users", ["photo_url"], name: "index_users_on_photo_url", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
