@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <p>
   <strong>Name:</strong>
   <%= @trip.name %>
@@ -28,6 +30,3 @@
   <%= @trip.out_date %>
 </p>
 
-<% if not user_signed_in? %>
-  <%= link_to "Cadastre-se!", new_user_registration_path, :class => 'btn btn-outline btn-white'  %> 
-<% end %>

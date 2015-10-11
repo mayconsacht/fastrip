@@ -8,8 +8,8 @@ class AddDeviseToCompanies < ActiveRecord::Migration
       t.string :cnpj
       t.string :phone
       t.string :andress
-      t.string :password
       t.string :access_token
+
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
@@ -42,8 +42,11 @@ class AddDeviseToCompanies < ActiveRecord::Migration
 
     add_index :companies, :email,                unique: true
     add_index :companies, :reset_password_token, unique: true
-    # add_index :companies, :confirmation_token,   unique: true
-    # add_index :companies, :unlock_token,         unique: true
+    add_index :companies, :name
+    add_index :companies, :cnpj
+    add_index :companies, :phone
+    add_index :companies, :andress
+    add_index :companies, :access_token
   end
 
   def self.down

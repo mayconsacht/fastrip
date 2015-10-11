@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   devise_for :companies
   devise_for :users, path_names: {sign_in: 'login', sign_out: 'logout'},
                      controllers: {omniauth_callbacks: 'omniauth_callbacks'}
@@ -9,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :companies
+  resources :trips
 
   root :to => 'home#index'
 

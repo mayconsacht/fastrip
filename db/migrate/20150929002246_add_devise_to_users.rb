@@ -7,7 +7,6 @@ class AddDeviseToUsers < ActiveRecord::Migration
       t.string :cpf
       t.string :phone
       t.string :andress
-      t.string :password
       t.string :access_token
       t.string :photo_url
       

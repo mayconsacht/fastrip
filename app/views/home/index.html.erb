@@ -47,6 +47,9 @@
         <div class="row col-lg-12">
             <h2>Pesquisa</h2><br>
             <%= render 'trips/new' %>
+            <% if not user_signed_in? %>
+                <%= link_to "Cadastre-se!", new_user_registration_path, :class => 'btn btn-outline btn-white'  %> 
+            <% end %>
         </div>
     </div>
 </section>
@@ -55,7 +58,8 @@
     <div class="container">
         <div class="row col-lg-12">
             <h2>Para agência</h2><br>
-            <%= render 'companies/new' %>
+            <%print resource_name.to_s.humanize%>
+            <%= render 'companies/registrations/new' %>
         </div>
     </div>
 </section>
