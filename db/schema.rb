@@ -42,17 +42,22 @@ ActiveRecord::Schema.define(version: 20151010175627) do
   add_index "companies", ["reset_password_token"], name: "index_companies_on_reset_password_token", unique: true, using: :btree
 
   create_table "trips", force: :cascade do |t|
+    t.string   "category",    limit: 255
     t.string   "name",        limit: 255
     t.string   "origin",      limit: 255
     t.string   "destination", limit: 255
     t.float    "price",       limit: 24
     t.string   "in_date",     limit: 255
     t.string   "out_date",    limit: 255
-    t.string   "type",        limit: 255
     t.text     "description", limit: 65535
+    t.integer  "company_id",  limit: 4
+    t.integer  "user_id",     limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
+
+  add_index "trips", ["company_id"], name: "index_trips_on_company_id", using: :btree
+  add_index "trips", ["user_id"], name: "index_trips_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                                      null: false

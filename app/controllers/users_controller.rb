@@ -21,10 +21,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to(action: "show", id: @user, notice: 'User was successfully created.') }
       else
         format.html { render :new }
       end
+      redirect_to(action: "show", id: @user)
     end
   end
 
@@ -35,6 +36,7 @@ class UsersController < ApplicationController
       else
         format.html { render :edit }
       end
+      redirect_to action: show
     end
   end
 

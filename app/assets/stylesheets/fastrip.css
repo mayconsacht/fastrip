@@ -2,13 +2,393 @@
 
 body {
     font-family: "Raleway",sans-serif;
+    color : #2B2B2B;
+    width: 100%;
+    height: 100%;
+    font-weight: 400;
     overflow-x: hidden;
+    overflow-y: auto;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+.geral {
+    min-height:100%;
+    position:relative;
+}
+
+@media(min-width:770px) {
+    .navbar {
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+    }
+}
+
+hr {
+    max-width: 50px;
+    border-color: #fff;
+    border-width: 3px;
+}
+
+hr.black {
+    border-color: #2B2B2B;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 35px;
+    font-family: "Raleway",sans-serif;
+    font-weight: 10;
+    letter-spacing: 0px;
+    color: #9B9A9A;
+}
+
+h1.title,
+h2.title,
+h2.title {
+    font-weight: bold;
+}
+
+h2.title-company {
+    color: white;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #646464;
+}
+
+p.footer {
+    font-size: 15px;
+    color:#fff;
+    font-weight: 100;
+    text-align: center;
+}
+
+p.contact {
+    margin: 0 0 35px;
+    font-size: 20px;
+    font-weight: 10;
+    letter-spacing: 0px;
+    color: #646464;   
+}
+
+p.company {
+    color: #fff;
+    font-weight: 500;
+    text-align: justify;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+    outline: 0;
+}
+
+.navbar {
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.navbar-custom {
+    color:#9B9A9A;
+    background-color:#FFFFFF;
+    border-radius:0;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color: #9B9A9A;
+}
+
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #000;
+    background-color:transparent;
+}
+
+.navbar-custom .navbar-brand {
+    color:#9B9A9A;
+    backgorund-color:#FFFFFF;
+    font-weight: 600;
+    font-size: 200%;
+}
+
+ .navbar-default .navbar-nav > .active{
+    color: #000;
+    background: #FFFFFF;
+ }
+ .navbar-default .navbar-nav > .active > a, 
+ .navbar-default .navbar-nav > .active > a:hover, 
+ .navbar-default .navbar-nav > .active > a:focus {
+    color: #000;
+    background: #FFFFFF;
+ }
+
+.navbar a:focus {
+    outline: 0;
+}
+
+.navbar .navbar-nav {
+    letter-spacing: 1px;
+}
+
+.navbar .navbar-nav li a:focus {
+    outline: 0;
+}
+
+.to-traveler {
+    height: auto;
+    min-height:100%;
+    background: #FFF;
+    padding: 5%;
+    padding-top: 10%;
+}
+
+.to-company {
+    height: auto;
+    min-height:100%;
+    background: #FFF;
+    padding: 5%;
+}
+
+.about {
+    height: auto;
+    min-height:90%;
+    text-align: center;
+    background: #FFF;
+    padding: 5%;
+    padding-top: 15%
+}
+
+
+.registration {
+    padding-top: 10%;
+    padding-left: 28%;
+    padding-right: 13%;
+}
+
+.company-registration {
+    padding-top: 7%;
+    padding-left: 27%;
+}
+
+.pass-one {
+    left: 0px;
+    margin: 0;
+}
+
+.button-enter {
+    padding-top: 8%;
+}
+
+.login {
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 20%;
+}
+ 
+.submit-nav-buttons {
+    background-color: white;
+    border: none;
+}
+
+
+.submit-nav-buttons:focus, .submit-nav-buttons:hover {
+    background-color: #8C8C8C;
+}
+
+.form-control:focus {
+    border-color: #BABABA;
+    -webkit-box-shadow: 1px;
+    box-shadow: none;
+}
+
+.footer-section {
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    background: #242424;
+    padding-top: 1.7%;
+}
+
+.footer-section-home {
+    position: relative;
+    bottom: 0;
+    width:100%;
+    background: #242424;
+    padding-top: 1.7%;
+    min-height: 90%
 }
 
 p.about-description {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
 }
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+    .intro-section .brand-heading { font-size: 30px; }
+    .intro-section .intro-text { font-size: 20px; }
+    .intro-section {padding-top: 20%;}
+
+    .btn-circle-sec {
+        padding-top: 5px;
+    }
+
+    .intro-section {
+        padding-top: 25%;
+    }
+    .produtos-section {
+        padding-top: 7%;
+    }
+    .empresa-section {
+        padding-top: 15%;
+    }
+    .localizacao-section {
+        padding-top: 15%;
+    }
+    .contato-section {
+        padding-top: 15%;
+    }     
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 0px) {
+    .intro-section .brand-heading { font-size: 30px; }
+    .intro-section .intro-text { font-size: 20px; }
+
+    .btn-circle-sec {
+        padding-top: 10px;
+    }
+
+    .intro-section {
+        padding-top: 25%;
+    }
+    .produtos-section {
+        padding-top: 7%;
+    }
+    .empresa-section {
+        padding-top: 15%;
+    }
+    .localizacao-section {
+        padding-top: 18%;
+    }
+    .contato-section {
+        padding-top: 18%;
+    }  
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    .intro-section .brand-heading { font-size: 35px; }
+    .intro-section .intro-text { font-size: 20px; }
+
+    .btn-circle-sec {
+        padding-top: 15px;
+    }
+
+    .intro-section {
+        padding-top: 25%;
+    }
+    .produtos-section {
+        padding-top: 7%;
+    }
+    .empresa-section {
+        padding-top: 15%;
+    }
+    .localizacao-section {
+        padding-top: 10%;
+    }
+    .contato-section {
+        padding-top: 10%;
+    }  
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    .intro-section .brand-heading { font-size: 40px; }
+    .intro-section .intro-text { font-size: 20px; }
+
+    .btn-circle-sec {
+        padding-top: 20px;
+    }
+
+    .intro-section {
+        padding-top: 15%;
+    }
+    .produtos-section {
+        padding-top: 10%;
+    }
+    .empresa-section {
+        padding-top: 15%;
+    }
+    .localizacao-section {
+        padding-top: 10%;
+    }
+    .contato-section {
+        padding-top: 10%;
+    }    
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+    .intro-section .brand-heading { font-size: 45px; }
+    .intro-section .intro-text { font-size: 25px; }
+
+    .btn-circle-sec {
+        padding-top: 25px;
+    }
+
+    .intro-section {
+        padding-top: 15%;
+    }
+    .produtos-section {
+        padding-top: 5%;
+    }
+    .empresa-section {
+        padding-top: 10%;
+    }
+    .localizacao-section {
+        padding-top: 5%;
+    }
+    .contato-section {
+        padding-top: 5%;
+    }
+}
+
+/*@import url(http://fonts.googleapis.com/css?family=Raleway:300,400,500,700);
+
+body {
+    font-family: "Raleway",sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+
 
 p.it-menu {
     font-size: 10px;
@@ -128,20 +508,20 @@ h6 {
     padding-left: 40%;   
 }
 
-#toTraveler {
-    padding-top: 10%;
-    padding: 10%;
+.toTraveler {
     height: auto;
     min-height: 100%;
+    background: #FFF;
+    padding: 5%;
 }
 
-#toCompany {
+.toCompany {
     padding: 10%;
     height: auto;
     min-height: 100%;   
 }
 
-#about {
+.about {
     padding: 10%;
     min-height: 100%;
 }
@@ -152,7 +532,7 @@ section.success {
     background: #3C875E;
 }
 
-/* footer */
+/* footer 
 .footer-section {
     position: relative;
     margin-bottom: 0px;
@@ -166,4 +546,4 @@ p.footer {
     color:#fff;
     font-weight: 100;
     text-align: center;
-}
+}*/

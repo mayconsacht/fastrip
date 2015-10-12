@@ -13,6 +13,13 @@
 
   <div class="row control-group">
     <div class="field col-xs-4 form-group controls">
+      <%= f.label :category %><br>
+      <%= f.text_field :category %>
+    </div>
+  </div>
+
+  <div class="row control-group">
+    <div class="field col-xs-4 form-group controls">
       <%= f.label :name %><br>
       <%= f.text_field :name %>
     </div>
@@ -42,21 +49,14 @@
   <div class="row control-group">
     <div class="field col-xs-4 form-group controls">
       <%= f.label :in_date %><br>
-      <%= f.datetime_select :in_date %>
+      <%= f.date_select :in_date, min  %>
     </div>
   </div>
 
   <div class="row control-group">
     <div class="field col-xs-4 form-group controls">
       <%= f.label :out_date %><br>
-      <%= f.datetime_select :out_date %>
-    </div>
-  </div>
-  
-  <div class="row control-group">
-    <div class="field col-xs-4 form-group controls">
-      <%= f.label :type %><br>
-      <%= f.text_field :type %>
+      <%= f.date_select :out_date %>
     </div>
   </div>
 

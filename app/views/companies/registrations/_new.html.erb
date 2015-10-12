@@ -1,54 +1,45 @@
-<div class='test'>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
 
-      <div class="row control-group">
-          <div class="field col-xs-4 form-group controls">
-              <%= f.text_field :name, class: 'form-control', placeholder: 'Nome Completo' %>
-          </div>
+  <div class="row control-group">
+      <div class="field col-xs-8 form-group controls">
+          <%= f.text_field :name, class: 'form-control', placeholder: 'Nome da Empresa' %>
       </div>
+  </div>
 
-      <div class="row control-group">
-          <div class="field col-xs-4 form-group controls">
+  <div class="row">
+          <div class="field col-xs-4 form-group controls col-lg-offset-2 pass-one">
               <%= f.text_field :cnpj, class: 'form-control', placeholder: 'CNPJ' %>
           </div>
-      </div>
-
-      <div class="row control-group">
           <div class="field col-xs-4 form-group controls">
-              <%= f.text_field :phone, class: 'form-control', placeholder: 'Telefone'%>
+              <%= f.text_field :phone, class: 'form-control', placeholder: 'Telefone' %>
           </div>
-      </div>
+  </div>
 
-      <div class="row control-group">
+  <div class="row control-group">
+      <div class="field col-xs-8 form-group controls">
+          <%= f.text_field :andress, class: 'form-control', placeholder: 'Endereço' %>
+      </div>
+  </div>
+
+  <div class="row control-group">
+      <div class="field col-xs-8 form-group controls">
+          <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
+      </div>
+  </div>
+
+  <div class="row">
+          <div class="field col-xs-4 form-group controls col-lg-offset-2 pass-one">
+              <%= f.password_field :password, class: 'form-control', placeholder: 'Senha (minimo de 8 caracteres)', autocomplete: "off" %>
+          </div>
           <div class="field col-xs-4 form-group controls">
-              <%= f.text_field :andress, class: 'form-control', placeholder: 'Endereço' %>
+              <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirmação da Senha', autocomplete: "off" %>
           </div>
-      </div>
+  </div>
 
-      <div class="row control-group">
-          <div class="field col-xs-4 form-group controls">
-              <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
-          </div>
-      </div>
+  <div class="actions">
+    <%= f.submit "Enviar", :class => 'btn submit-buttons'%>
+  </div>
+<% end %>
 
-      <div class="row control-group">
-          <div class="field col-xs-4 form-group controls">
-              <%= f.password_field :password, class: 'form-control', placeholder: 'Senha (minimo de 8 caracteres)' %>
-          </div>
-      </div>
-
-
-      <div class="row control-group">
-          <div class="field col-xs-4 form-group controls">
-              <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirmação da Senha' %>
-          </div>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "Enviar", :class => 'navbar-link btn btn-info bt-lg'%>
-      </div>
-    <% end %>
-
-    <%= render "devise/shared/links" %>
-</div>
+<%= render "devise/shared/links" %>
