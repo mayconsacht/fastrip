@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(version: 20151010175627) do
     t.string   "origin",      limit: 255
     t.string   "destination", limit: 255
     t.float    "price",       limit: 24
-    t.string   "in_date",     limit: 255
-    t.string   "out_date",    limit: 255
+    t.date     "in_date"
+    t.date     "out_date"
     t.text     "description", limit: 65535
     t.integer  "company_id",  limit: 4
     t.integer  "user_id",     limit: 4

@@ -1,30 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class='general-form'>
+
+  <p id="notice"><%= notice %></p>
 
 
-<% render 'trips/form' %>
-<p>
-  <strong>Name:</strong>
-  <%= @trip.name %>
-</p>
+  <% render 'trips/form' %>
+  <p>
+    <strong>Name:</strong>
+    <%= @trip.name %>
+  </p>
 
 
-<p>
-  <strong>Origem</strong>
-  <%= @trip.origin %>
-</p>
+  <p>
+    <strong>Origem</strong>
+    <%= @trip.origin %>
+  </p>
 
-<p>
-  <strong>Destino</strong>
-  <%= @trip.destination %>
-</p>
+  <p>
+    <strong>Destino</strong>
+    <%= @trip.destination %>
+  </p>
 
-<p>
-  <strong>Data de Entrada</strong>
-  <%= @trip.in_date %>
-</p>
+  <p>
+    <strong>Data de Entrada</strong>
+    <%= @trip.in_date %>
+  </p>
 
-<p>
-  <strong>Data de Saída</strong>
-  <%= @trip.out_date %>
-</p>
+  <p>
+    <strong>Data de Saída</strong>
+    <%= @trip.out_date %>
+  </p>
 
+</div>

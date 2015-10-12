@@ -2,7 +2,11 @@ class SessionsController < Devise::SessionsController
     protected
 
 	def after_sign_in_path_for(resource)
-	  company_path(@company)
+		if resource_name == :company
+	  		company_path(@company)
+	  	elsif resource_name == :user
+	  		user_path(@user)
+	  	end
 	end
-	
+
 end
