@@ -6,6 +6,7 @@ class CompaniesController < ApplicationController
   end
 
   def show
+    @companies = Company.all
   end
 
   def new

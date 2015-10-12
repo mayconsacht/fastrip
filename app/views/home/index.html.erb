@@ -62,7 +62,12 @@
     <div class="container">
         <div class="row col-lg-12 company-registration">
             <h2>Para agência</h2><br>
-            <%= render 'companies/registrations/new' %>
+            <% if not company_signed_in? %>
+                <%= render 'companies/registrations/new' %>
+            <% else %>
+                Você já está logado!
+                <%= link_to "Logout", destroy_company_session_path, :method => :delete %>
+            <% end %>
         </div>
     </div>
 </section>

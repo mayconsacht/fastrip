@@ -49,14 +49,14 @@
   <div class="row control-group">
     <div class="field col-xs-4 form-group controls">
       <%= f.label :in_date %><br>
-      <%= f.date_select :in_date, min  %>
+      <%= f.date_select :in_date, :start_year =>  2015  %>
     </div>
   </div>
 
   <div class="row control-group">
     <div class="field col-xs-4 form-group controls">
       <%= f.label :out_date %><br>
-      <%= f.date_select :out_date %>
+      <%= f.date_select :out_date, :start_year =>  2015 %>
     </div>
   </div>
 
