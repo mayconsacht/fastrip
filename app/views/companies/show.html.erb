@@ -1,12 +1,11 @@
-<div class='general-form'>
-  <p id="notice"><%= notice %></p>
+<div class='general-form-trips'>
 
   <h1>Lista de Viagens</h1>
   <hr>
   <div class="CSSTableGenerator">
 
-      <table>
-  
+      <table class="table table-striped">
+        <thead>
           <tr>
             <th>Nome</th>
             <th>Categoria</th>
@@ -18,9 +17,9 @@
             <th>Descrição</th>
             <th colspan="3"></th>
           </tr>
-  
+        </thead>
 
-  
+        <tbody>
           <% @company.trips.each do |trip| %>
             <tr>
               <td><%= trip.name %></td>
@@ -31,17 +30,19 @@
               <td><%= trip.in_date %></td>
               <td><%= trip.out_date %></td>
               <td><%= trip.description %></td>
-              <td><%= link_to 'Show', trip %></td>
-              <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
-              <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><div class="btn-group" role="group" aria-label="...">
+                <%= link_to 'Detalhar', trip, :class => 'btn btn-default'%>
+                <%= link_to 'Editar', edit_trip_path(trip), :class => 'btn btn-default' %>
+                <%= link_to 'Cancelar', trip, method: :delete, :class => 'btn btn-default', data: { confirm: 'Tem certeza que deseja deletar a viagem?' } %>
+              </div></td>
             </tr>
           <% end %>
-  
+        </tbody>
       </table>
   </div>
 
   <br>
 
-  <%= link_to 'New Trip', new_trip_path %>
+  <%= link_to 'Nova Viagem', new_trip_path, :class => 'btn btn-info' %>
 
 </div>

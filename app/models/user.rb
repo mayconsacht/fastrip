@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
     has_many :company, :through => :trips
     
     devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+    :recoverable, :rememberable, :trackable, :validatable, :omniauthable,
+    :omniauth_providers => [:facebook]
 
     attr_accessible :name, :email, :cpf, :phone, :andress, :password, :access_token, :uid, :photo_url, :provider
 

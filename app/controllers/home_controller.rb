@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   	@trip = Trip.new
     @user = User.new
     @company = Company.new
+    @post = Post.new
   end
 
 end

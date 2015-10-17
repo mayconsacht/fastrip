@@ -5,37 +5,53 @@
       <%= devise_error_messages! %>
 
       <div class="row control-group">
-          <div class="field col-xs-4 form-group controls">
+          <div class="field col-xs-4 input-group form-group controls">
+              <span class="input-group-addon" id="sizing-addon1">
+                <i class="fa fa-industry"></i>
+              </span>
               <%= f.text_field :name, class: 'form-control', placeholder: 'Nome da Empresa', autofocus: true %>
           </div>
       </div>
 
       <div class="row control-group">
-          <div class="field col-xs-4 form-group controls">
+          <div class="field col-xs-4 input-group form-group controls">
+            <span class="input-group-addon" id="sizing-addon1">
+              <i class="fa fa-credit-card"></i>
+            </span>
               <%= f.text_field :cnpj, class: 'form-control', placeholder: 'CNPJ', autofocus: true %>
           </div>
       </div>
 
       <div class="row control-group">
-          <div class="field col-xs-4 form-group controls">
+          <div class="field col-xs-4 input-group form-group controls">
+              <span class="input-group-addon" id="sizing-addon1">
+                <i class="fa fa-phone"></i>
+              </span>
               <%= f.phone_field :phone, class: 'form-control', placeholder: 'Telefone', autofocus: true %>
           </div>
       </div>
 
       <div class="row control-group">
-          <div class="field col-xs-4 form-group controls">
+          <div class="field col-xs-4 input-group form-group controls">
+              <span class="input-group-addon" id="sizing-addon1">
+                <i class="fa fa-map-marker"></i>
+              </span>
               <%= f.text_field :andress, class: 'form-control', placeholder: 'Endereço', autofocus: true %>
           </div>
       </div>
 
       <div class="row control-group">
-          <div class="field col-xs-4 form-group controls">
+          <div class="field col-xs-4 input-group form-group controls">
+              <span class="input-group-addon" id="sizing-addon1">@</span>
               <%= f.email_field :email, class: 'form-control', placeholder: 'Email', autofocus: true %>
           </div>
       </div>
 
       <div class="row control-group">
-          <div class="field col-xs-4 form-group controls">
+          <div class="field col-xs-4 input-group form-group controls">
+              <span class="input-group-addon" id="sizing-addon1">
+                <i class="fa fa-key"></i>
+              </span>
               <%= f.password_field :password, class: 'form-control', placeholder: 'Nova Senha (se não deseja alterar deixar em branco)', autocomplete: "off" %>
           </div>
       </div>
@@ -45,13 +61,16 @@
       <% end %>
 
       <div class="row control-group">
-          <div class="field col-xs-4 form-group controls">
+          <div class="field col-xs-4 input-group form-group controls">
+              <span class="input-group-addon" id="sizing-addon1">
+                <i class="fa fa-refresh"></i>
+              </span>
               <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirmação da Nova Senha', autocomplete: "off" %>
           </div>
       </div>
 
       <div class="row control-group">
-          <div class="field col-xs-4 form-group controls">
+          <div class="field col-xs-4 input-group form-group controls">
               Digite a senha atual para confirmar as alterações
               <%= f.password_field :current_password, class: 'form-control', placeholder: 'Senha Atual', autocomplete: "off" %>
           </div>

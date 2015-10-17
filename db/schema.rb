@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151010175627) do
+ActiveRecord::Schema.define(version: 20151016024520) do
 
   create_table "companies", force: :cascade do |t|
     t.datetime "created_at",                                      null: false
@@ -40,6 +40,17 @@ ActiveRecord::Schema.define(version: 20151010175627) do
   add_index "companies", ["name"], name: "index_companies_on_name", using: :btree
   add_index "companies", ["phone"], name: "index_companies_on_phone", using: :btree
   add_index "companies", ["reset_password_token"], name: "index_companies_on_reset_password_token", unique: true, using: :btree
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.date     "post_date"
+    t.text     "message",    limit: 65535
+    t.integer  "trip_id",    limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "posts", ["trip_id"], name: "index_posts_on_trip_id", using: :btree
 
   create_table "trips", force: :cascade do |t|
     t.string   "category",    limit: 255
@@ -89,6 +100,8 @@ ActiveRecord::Schema.define(version: 20151010175627) do
   add_index "users", ["name"], name: "index_users_on_name", using: :btree
   add_index "users", ["phone"], name: "index_users_on_phone", using: :btree
   add_index "users", ["photo_url"], name: "index_users_on_photo_url", using: :btree
+  add_index "users", ["provider"], name: "index_users_on_provider", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
 
 end

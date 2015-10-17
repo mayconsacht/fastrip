@@ -2,10 +2,7 @@
     <div class="container">
         <div class="row col-lg-12">
             <h2>Pesquisa</h2><br>
-            
-            <% if not user_signed_in? %>
-                <%= link_to "Cadastre-se!", new_user_registration_path, :class => 'btn submit-buttons'  %> 
-            <% end %>
+            <%= render 'trips/search_trip' %>
         </div>
     </div>
 </section>

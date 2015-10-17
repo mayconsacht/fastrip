@@ -1,32 +1,40 @@
- <div class="login">
-  <h2>Log in</h2>
+<div class='login'>
+ <div class="panel panel-info">
+    
+    <div class="panel-heading">Painel de Autenticação</div>
+    
+    <div class="panel-body subform-login ">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-      <div class="row control-group">
-          <div class="field col-xs-8 form-group controls">
-              <%= f.email_field :email, class: 'form-control', autofocus: true %>
-          </div>
-      </div>
-
-      <div class="row control-group">
-          <div class="field col-xs-8 form-group controls">
-              <%= f.password_field :password, class: 'form-control', autocomplete: "off" %>
-          </div>
-      </div>
-
-      <% if devise_mapping.rememberable? -%>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          Relembrar senha
+        <div class="row input-group control-group">
+            <div class="field form-group controls">
+                <span class="input-group-addon" id="sizing-addon1">
+            <i class="fa fa-credit-card"></i>
+          </span>
+                <%= f.email_field :email, class: 'form-control', autofocus: true, placeholder: 'Informe seu e-mail' %>
+            </div>
         </div>
-      <% end -%>
 
-      <div class="actions">
-        <%= f.submit "Entrar" %>
-      </div>
-  
-  <% end %>
+        <div class="row control-group">
+            <div class="field  form-group controls">
+                <%= f.password_field :password, class: 'form-control', autocomplete: "off", placeholder: 'Sua senha' %>
+            </div>
+        </div>
 
-  <%= render "users/shared/links" %>
+        <% if devise_mapping.rememberable? -%>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            Relembrar senha
+          </div>
+        <% end -%>
+
+        <div class="actions">
+          <%= f.submit "Entrar", :class => 'btn btn-info'%>
+        </div>
+    
+    <% end %>
+
+    <%= render "users/shared/links" %>
+  </div>
+</div>
 </div>

@@ -13,10 +13,7 @@
 	    <%= stylesheet_link_tag    "application", :media => "all" %>
 	    <%= javascript_include_tag "application" %>
 	    <%= csrf_meta_tags %>
-
-	    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-	    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 	</head>
 
 	<body>
@@ -48,7 +45,7 @@
 			                        <%= link_to 'Edit profile', edit_user_registration_path %> 
 			                        <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
 			                    <% else %>
-			                        <%= link_to "Entrar", new_user_session_path, :class => 'btn submit-buttons'  %>
+			                        <%= link_to "Entrar", new_user_session_path, :class => 'btn submit-nav-buttons' %>
 			                    <% end %>
 			                    <p>
 			                </li>

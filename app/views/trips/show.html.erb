@@ -1,8 +1,5 @@
 <div class='general-form'>
 
-  <p id="notice"><%= notice %></p>
-
-
   <% render 'trips/form' %>
   <p>
     <strong>Name:</strong>
@@ -29,5 +26,8 @@
     <strong>Data de Saída</strong>
     <%= @trip.out_date %>
   </p>
-
+  <hr>
+  <% @trip.posts.each do |post| %>
+      <%= post.message %>
+  <% end %>
 </div>
