@@ -15,11 +15,6 @@ html {
     height: 100%;
 }
 
-.geral {
-    min-height:100%;
-    position:relative;
-}
-
 @media(min-width:770px) {
     .navbar {
         padding: 20px 0;
@@ -34,13 +29,9 @@ html {
 }
 
 hr {
-    max-width: 50px;
+    max-width: 400px;
     border-color: #fff;
-    border-width: 3px;
-}
-
-hr.black {
-    border-color: #2B2B2B;
+    border-width: 1px;
 }
 
 h1,
@@ -174,6 +165,12 @@ a.active {
     outline: 0;
 }
 
+
+.geral {
+    min-height:100%;
+    position:relative;
+}
+
 .to-traveler {
     padding: 5%;
     position: relative;
@@ -189,11 +186,19 @@ a.active {
     background-size: cover;
 }
 
-.company-text{
+.travel-text{
     position:relative;
     width: 700px;
     float: left;
-    padding-top: 16%;
+    padding-top: 13%;
+    text-shadow: 0 0 0.0001em #2C3E50, 0 0 0.0001em #2C3E50, 0 0 0.0001em #2C3E50;
+}
+
+.company-text {
+    position:relative;
+    width: 550px;
+    float: right;
+    padding-top: 8%;
     text-shadow: 0 0 0.0001em #2C3E50, 0 0 0.0001em #2C3E50, 0 0 0.0001em #2C3E50;
 }
 
@@ -244,7 +249,7 @@ a.active {
 }
 
 .company-registration {
-    padding-right: 25%
+
 }
 
 .pass-one {
@@ -252,9 +257,35 @@ a.active {
     margin: 0;
 }
 
+.buttons-home {
+    padding-top: 3%;
+}
+
+.cad-button {
+    padding-top: 0.3%;
+}
+
+.pipe {
+    position: absolute;
+    color: white;
+    font-size: 18px;
+    margin-left: 25%;
+    padding-top: 2%;
+    float: center;
+}
+
 .button-enter {
     padding-top: 12%;
     padding-left: 15%;
+}
+
+.botao-fb{   
+ background:url(fb-login.png);
+ cursor:pointer;
+ height: 50px;
+ width: 245px;
+ border-color: none;
+ border: none;
 }
 
 .subform-login {

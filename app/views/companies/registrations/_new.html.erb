@@ -2,37 +2,37 @@
   <%= devise_error_messages! %>
 
   <div class="row control-group">
-      <div class="field col-xs-8 form-group controls">
+      <div class="field col-xs-12 form-group controls">
           <%= f.text_field :name, class: 'form-control', placeholder: 'Nome da Empresa' %>
       </div>
   </div>
 
   <div class="row">
-      <div class="field col-xs-4 form-group controls col-lg-offset-2 pass-one">
+      <div class="field col-xs-6 form-group controls col-lg-offset-2 pass-one">
           <%= f.text_field :cnpj, class: 'form-control', placeholder: 'CNPJ' %>
       </div>
-      <div class="field col-xs-4 form-group controls">
+      <div class="field col-xs-6 form-group controls">
           <%= f.text_field :phone, class: 'form-control', placeholder: 'Telefone' %>
       </div>
   </div>
 
   <div class="row control-group">
-      <div class="field col-xs-8 form-group controls">
+      <div class="field col-xs-12 form-group controls">
           <%= f.text_field :andress, class: 'form-control', placeholder: 'Endereço' %>
       </div>
   </div>
 
   <div class="row control-group">
-      <div class="field col-xs-8 form-group controls">
+      <div class="field col-xs-12 form-group controls">
           <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
       </div>
   </div>
 
   <div class="row">
-      <div class="field col-xs-4 form-group controls col-lg-offset-2 pass-one">
+      <div class="field col-xs-6 form-group controls col-lg-offset-2 pass-one">
           <%= f.password_field :password, class: 'form-control', placeholder: 'Senha (minimo de 8 caracteres)', autocomplete: "off" %>
       </div>
-      <div class="field col-xs-4 form-group controls">
+      <div class="field col-xs-6 form-group controls">
           <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirmação da Senha', autocomplete: "off" %>
       </div>
   </div>
