@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151016024520) do
+ActiveRecord::Schema.define(version: 20151019003345) do
 
   create_table "companies", force: :cascade do |t|
     t.datetime "created_at",                                      null: false
@@ -53,18 +53,22 @@ ActiveRecord::Schema.define(version: 20151016024520) do
   add_index "posts", ["trip_id"], name: "index_posts_on_trip_id", using: :btree
 
   create_table "trips", force: :cascade do |t|
-    t.string   "category",    limit: 255
-    t.string   "name",        limit: 255
-    t.string   "origin",      limit: 255
-    t.string   "destination", limit: 255
-    t.float    "price",       limit: 24
+    t.string   "category",            limit: 255
+    t.string   "name",                limit: 255
+    t.string   "origin",              limit: 255
+    t.string   "destination",         limit: 255
+    t.float    "price",               limit: 24
     t.date     "in_date"
     t.date     "out_date"
-    t.text     "description", limit: 65535
-    t.integer  "company_id",  limit: 4
-    t.integer  "user_id",     limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.text     "description",         limit: 65535
+    t.integer  "company_id",          limit: 4
+    t.integer  "user_id",             limit: 4
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "avatar_file_name",    limit: 255
+    t.string   "avatar_content_type", limit: 255
+    t.integer  "avatar_file_size",    limit: 4
+    t.datetime "avatar_updated_at"
   end
 
   add_index "trips", ["company_id"], name: "index_trips_on_company_id", using: :btree

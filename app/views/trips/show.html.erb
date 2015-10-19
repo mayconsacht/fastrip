@@ -26,8 +26,16 @@
     <strong>Data de Saída</strong>
     <%= @trip.out_date %>
   </p>
+
+  <p>
+    <strong>Avatar</strong>
+    <%= image_tag @trip.avatar.url(:thumb) %>
+  </p>
+
   <hr>
   <% @trip.posts.each do |post| %>
       <%= post.message %>
   <% end %>
+
+
 </div>

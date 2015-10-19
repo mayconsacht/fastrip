@@ -27,8 +27,6 @@ class ApplicationController < ActionController::Base
    		elsif resource_name == :company
    			"devise_company_application"
 
-   		else
-   			"devise_application"
    		end
       
    	else

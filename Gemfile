@@ -28,6 +28,8 @@ gem 'mail_form'
 
 gem 'devise'
 
+gem "paperclip", "~> 4.3"
+
 gem 'protected_attributes'
 
 group :development, :test do

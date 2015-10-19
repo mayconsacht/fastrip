@@ -1,4 +1,5 @@
 class Trip < ActiveRecord::Base
+
 	belongs_to :user
 	belongs_to :company
 	has_many   :posts
@@ -9,6 +10,9 @@ class Trip < ActiveRecord::Base
 	scope :with_destination, lambda {|parameter| where("destination like ?", "%#{parameter}%")}
 	scope :in_date, lambda {|parameter| where("in_date = ?", parameter)}
 	scope :out_date, lambda {|parameter| where("out_date = ?", parameter)}
+
+    has_attached_file :avatar, styles: { medium: "300x300>", thumb: "150x150>" }, default_url: ":style/missing.png"
+    validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
 	def self.search(parameters)
 		trips_query = self

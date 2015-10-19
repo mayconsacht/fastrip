@@ -176,7 +176,7 @@ a.active {
     position: relative;
     height: auto;
     min-height:100%;
-    background-image: url(search-bg3.jpg);
+    background-image: url(search-bg.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -206,7 +206,6 @@ a.active {
     position: relative;
     height: auto;
     min-height:100%;
-    background: #E9EAED;
     padding: 5%;
     padding-top: 12%;
     background-image: url(company-bg.jpg);
@@ -222,7 +221,7 @@ a.active {
 .about {
     height: auto;
     min-height:90%;
-    background: #FFF;
+    background: #E9EAED;
     padding-top: 15%;
 }
 

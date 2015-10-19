@@ -1,4 +1,4 @@
-<%= form_for(@trip) do |f| %>
+<%= form_for @trip, :html => { :multipart => true } do |f| %>
   <% if @trip.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
@@ -49,6 +49,10 @@
     <div class="field col-xs-8 form-group controls">
       <%= f.text_area :description, class: 'form-control', placeholder: 'Descrição' %>
     </div>
+  </div>
+  
+  <div class="row control-group">
+    <%= f.file_field :avatar %>
   </div>
 
   <div class="actions">
