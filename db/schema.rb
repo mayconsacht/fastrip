@@ -89,6 +89,9 @@ ActiveRecord::Schema.define(version: 20151016024520) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255
     t.string   "last_sign_in_ip",        limit: 255
+    t.string   "user_name",              limit: 255
+    t.string   "oauth_token",            limit: 255
+    t.string   "token_secret",           limit: 255
     t.string   "provider",               limit: 255
     t.string   "uid",                    limit: 255
   end
@@ -98,10 +101,13 @@ ActiveRecord::Schema.define(version: 20151016024520) do
   add_index "users", ["cpf"], name: "index_users_on_cpf", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["name"], name: "index_users_on_name", using: :btree
+  add_index "users", ["oauth_token"], name: "index_users_on_oauth_token", using: :btree
   add_index "users", ["phone"], name: "index_users_on_phone", using: :btree
   add_index "users", ["photo_url"], name: "index_users_on_photo_url", using: :btree
   add_index "users", ["provider"], name: "index_users_on_provider", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["token_secret"], name: "index_users_on_token_secret", using: :btree
   add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
+  add_index "users", ["user_name"], name: "index_users_on_user_name", using: :btree
 
 end

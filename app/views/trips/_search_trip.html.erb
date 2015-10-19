@@ -1,42 +1,40 @@
 <%= form_tag(trips_path, :method => "get") do %>
   <div class="row control-group">
-    <div class="field col-xs-4 form-group controls">
+    <div class="field col-xs-12 form-group controls">
       <%= text_field_tag :with_name, nil, {class: 'form-control', placeholder: 'Nome'}  %>
     </div>
   </div>
 
   <div class="row">
-    <div class="field col-xs-4 form-group controls col-lg-offset-2 pass-one">
+    <div class="field col-xs-12 form-group controls col-lg-offset-2 pass-one">
       <%= text_field_tag :in_category, nil, {class: 'form-control', placeholder: 'Categoria'} %>
     </div>
   </div>
 
   <div class="row">
-    <div class="field col-xs-4 form-group controls col-lg-offset-2 pass-one">
+    <div class="field col-xs-12 form-group controls col-lg-offset-2 pass-one">
         <%= text_field_tag :with_origin, nil, {class: 'form-control', placeholder: 'Origem'} %>
     </div>
   </div>
 
   <div class="row">  
-    <div class="field col-xs-4 form-group controls">
+    <div class="field col-xs-12 form-group controls">
         <%= text_field_tag :with_destination, nil, {class: 'form-control', placeholder: 'Destino'} %>
     </div>
   </div>
 
   <div class="row">
-    <div class="field col-xs-4 form-group controls col-lg-offset-2 pass-one">
+    <div class="field col-xs-12 form-group controls col-lg-offset-2 pass-one">
       <%= text_field_tag :in_date, nil, {start_year:  2015, class: 'form-control', placeholder: 'Data de Saída', order: [:day, :month, :year]}  %>
     </div>
   </div>
 
   <div class="row">
-    <div class="field col-xs-4 form-group controls">
+    <div class="field col-xs-12 form-group controls">
       <%= text_field_tag :out_date, nil, {start_year: 2015, class: 'form-control', placeholder: 'Data de Volta', order: [:day, :month, :year]} %>
     </div>
   </div>
 
   <%= submit_tag "Buscar", { :class => 'btn btn-info'} %>
-  <% if not user_signed_in? %>
-      <%= link_to "Cadastrar-se", new_user_registration_path, :class => 'btn btn-info'  %> 
-  <% end %>
+
 <% end %>

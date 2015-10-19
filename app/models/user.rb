@@ -7,33 +7,31 @@ class User < ActiveRecord::Base
     :recoverable, :rememberable, :trackable, :validatable, :omniauthable,
     :omniauth_providers => [:facebook]
 
-    attr_accessible :name, :email, :cpf, :phone, :andress, :password, :access_token, :uid, :photo_url, :provider
+    attr_accessible :name, :email, :cpf, :phone, :andress, :password, :password_confirmation, :access_token, :uid, :photo_url, :provider
 
     validates_presence_of :email
     validates_uniqueness_of :email
 
-    def self.from_omniauth(auth)
-    	where(auth.slice(:provider, :uid)).first_or_create do |user|
-            user.email = auth.info.email
-            user.password = Devise.friendly_token[0,20]
-    		user.provider = auth.provider
-    		user.uid = auth.uid
-    		user.name = auth.info.name
-    	end
-    end
-
-    def self.new_with_session(params, session)
-    	if session["devise.user_attributes"]
-    		new(session["devise.user_attributes"], without_protection: true) do |user|
-    			user.attributes = params
-    			user.valid?
-    		end
-    	else
-    		super
-    	end
-    end
-
-    def password_required?
-    	super && provider.blank?
+    def self.find_for_facebook_oauth(auth, signed_in_resource = nil)
+        user = User.where(:provider => auth.provider, :uid => auth.uid).first
+        if user
+          return user
+        else
+          registered_user = User.where(:email => auth.info.email).first
+          if registered_user
+            return registered_user
+          else
+            user = User.create(name: auth.info.first_name,
+                               provider: auth.provider,
+                               uid: auth.uid,
+                               email: auth.info.email,
+                               oauth_token: auth.credentials.token,
+                               token_secret: auth.credentials.secret,
+                                         #oauth_expires_at = Time.at(auth.credentials.expires_at.to_s)
+                                         #oauth_expires_at: DateTime.current >> 2,
+                               password: Devise.friendly_token[0,20],
+                              )
+            end
+        end
     end
 end

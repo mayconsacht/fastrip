@@ -1,16 +1,31 @@
 <section id="search-trip" class="to-traveler">
     <div class="container">
-        <div class="row col-lg-12">
-            <h2>Pesquisa</h2><br>
-            <%= render 'trips/search_trip' %>
+        <div class="row">
+            <div class="company-text col-lg-9">
+                <h1 class="primary-title">Bem Vindo ao FASTRIP!</h1>
+
+                <p class="search-text">Aqui você encontra a sua viagem desejada e solicita a empresa responsável que entre em contato para fechar negócio. 
+                </p>
+                <p class="search-text">É simples e fácil, basta cadastrar-se para poder fazer solicitações, dar feedbacks sobre viagens que você já concretizou, ter um histórico de suas viagens e muito mais!
+                </p>
+                <div class="text-center">
+                <% if not user_signed_in? %>
+                    <%= link_to "Cadastrar-se", new_user_registration_path, :class => 'btn submit-buttons'  %>
+                <% end %>
+                </div>
+            </div> 
+            <div class="search-form">
+                <h2 class='second-title'>BUSCAR VIAGENS</h2><br>
+                <%= render 'trips/search_trip' %>
+            </div>
         </div>
     </div>
 </section>
 
 <section id="company" class='to-company success conteudo'>
     <div class="container">
-        <div class="row col-lg-12 company-registration">
-            <h2>Para agência</h2><br>
+        <div class="row company-registration">
+            <h2 class="second-title">CADASTRE A SUA EMPRESA</h2><br>
             <% if not company_signed_in? %>
                 <%= render 'companies/registrations/new' %>
             <% else %>
@@ -28,11 +43,11 @@
                 <h2>Sobre</h2><br>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-4 col-lg-offset-2">
+        <div class="row about-text text-center">
+            <div class="col-lg-5">
                 <p class='about-description'>Muito Prazer, sou Maycon Rafael Sacht, estudante de Bacharelado em Sistemas de Informação do Centro Universitário Católica de Santa Catarina. O Fastrip foi desenvolvido como proposta para o meu trabalho de conclusão de curso durante o ano de 2015.</p>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-5">
                 <p class='about-description'>O objetivo do Fastrip é ser um canal centralizado de informações referentes a viagens onde tanto agências de viagens quanto usuários que estejam a procura de serviços oferecidos por estas agências possam ter agilidade no processo de contratação destes serviços. </p>
             </div>
 

@@ -26,6 +26,10 @@ class AddDeviseToUsers < ActiveRecord::Migration
       t.datetime :last_sign_in_at
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
+
+      t.string   :user_name
+      t.string   :oauth_token
+      t.string   :token_secret
       
     end
 
@@ -37,6 +41,9 @@ class AddDeviseToUsers < ActiveRecord::Migration
     add_index :users, :andress
     add_index :users, :access_token
     add_index :users, :photo_url
+    add_index :users, :user_name
+    add_index :users, :oauth_token
+    add_index :users, :token_secret
   end
 
   def self.down

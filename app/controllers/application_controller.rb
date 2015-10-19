@@ -8,6 +8,13 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :phone
     devise_parameter_sanitizer.for(:sign_up) << :andress
     devise_parameter_sanitizer.for(:sign_up) << :cnpj
+    devise_parameter_sanitizer.for(:sign_up) << :email
+    devise_parameter_sanitizer.for(:sign_up) << :password
+    devise_parameter_sanitizer.for(:sign_up) << :uid
+    devise_parameter_sanitizer.for(:sign_up) << :provider
+    devise_parameter_sanitizer.for(:sign_up) << :user_name
+    devise_parameter_sanitizer.for(:sign_up) << :oauth_token
+    devise_parameter_sanitizer.for(:sign_up) << :token_secret
   end
   
   layout :layout_by_resource
