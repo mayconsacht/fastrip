@@ -18,6 +18,7 @@ html {
 @media(min-width:770px) {
     .navbar {
         padding: 20px 0;
+
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
         transition: background .5s ease-in-out,padding .5s ease-in-out;
@@ -59,10 +60,18 @@ h1.primary-title {
     font-weight: bold;
 }
 
+
+h1.primary-title-ab {
+    text-align: center;
+    font-weight: bold;
+    color:#9B9A9A; 
+}
+
 h2.second-title{
     color: white;
     font-weight: bold;
 }
+
 
 h2.title-company {
     color: white;
@@ -103,8 +112,16 @@ p.search-text {
     line-height: 1.2;
 }
 
+p.about-text {
+    text-align: center;
+    color: #9B9A9A;
+    font-size: 23px;
+    line-height: 1.2;
+}
+
 p.it-menu {
     color: white;
+    position: absolute;
 }
 
 a,
@@ -226,7 +243,7 @@ a.active {
 }
 
 .about-text {
-    padding-left: 12%;
+    padding-left: 5%;
 }
 
 .general-form {
@@ -238,6 +255,7 @@ a.active {
 .general-form-trips {
     padding: 5%; 
     padding-top: 10%;
+    background: #E9EAED; 
 }
 
 .search-form {
@@ -245,10 +263,6 @@ a.active {
     width: 400px;
     padding-top: 7%;
     margin-left: 55%; 
-}
-
-.company-registration {
-
 }
 
 .pass-one {
@@ -271,6 +285,25 @@ a.active {
     margin-left: 25%;
     padding-top: 2%;
     float: center;
+}
+
+.it-menu-company {
+    color: white;
+}
+
+.it-menu-conf {
+    float: right;
+    text-transform: none;    
+} 
+
+.nav-cus {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.menu1 {
+    top: 12%;
+    padding-right: 100%;
 }
 
 .button-enter {
@@ -482,4 +515,8 @@ p.about-description {
     .contato-section {
         padding-top: 5%;
     }
+}
+
+.menu-panel:focus, .menu-panel:hover {
+    background-color: #3D556E;
 }

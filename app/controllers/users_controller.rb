@@ -16,6 +16,10 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def send_contact_to_company
+    
+  end
+
   def create
     @user = User.new(user_params)
 

@@ -15,6 +15,7 @@
 	    <%= javascript_include_tag "application" %>
 	    <%= csrf_meta_tags %>
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
 	</head>
 
 	<body>
@@ -33,11 +34,11 @@
 
 		        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		            <ul class="nav navbar-nav navbar-right">
-
+		            
 		                <li class="hidden">
 		                    <a href="/"></a>
 		                </li>
-			                
+			                <% if current_page?(controller: 'home', action: 'index') %>
 				                <li class="page-scroll">
 				                    <a href="#search-trip">Buscar viagens</a>
 				                </li>
@@ -45,11 +46,6 @@
 				                    <a href="#company">Ofertar viagens</a>
 				                </li>
 				                <li class="page-scroll">
-				                    <a href="#about">Sobre</a>
-				                </li>
-				            
-		                <li class="page-scroll">
-		                    
 		                    <% if user_signed_in? %>
 		                        <p class='it-menu'>
 		                        Bem vindo <strong><%= current_user.name %></strong>!
@@ -57,17 +53,23 @@
 		                        <%= link_to 'Sair', destroy_user_session_path, :method => :delete %>
 		                        <p>
 		                    <% elsif company_signed_in? %>
-		                        <p class='it-menu'>
-		                        Bem vindo <strong><%= current_company.name %></strong>!
-		                        <%= link_to 'Editar Perfil', edit_company_registration_path %> 
-		                        <%= link_to 'Sair', destroy_company_session_path, :method => :delete %>
-		                        <p>
-		                    <% else %>
-		                        <div class="button-enter">
-		                            <%= link_to "Entrar", new_user_session_path, :class => 'btn submit-nav-buttons'  %>
+		                        <div class='it-menu'>
+
+		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-suitcase'), company_path(current_company.id), "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Ver Viagens") %>
+		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-cog'), edit_company_registration_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Alterar Cadastro") %> 
+		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-sign-out'), destroy_company_session_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Sair", :method => :delete) %>
 		                        </div>
 		                    <% end %>
-		                    
+				                    <a href="#about">Sobre</a>
+				                </li>
+				            <% end %>
+				            
+		                <li class="page-scroll">
+		                	<% if not user_signed_in? and not company_signed_in? %>
+	                    	<div class="button-enter">
+	                            <%= link_to "Entrar", new_user_session_path, :class => 'btn submit-nav-buttons'  %>
+	                            <% end %>
+	                        </div>
 		                </li>
 		            </ul>
 		        </div>

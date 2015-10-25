@@ -35,3 +35,17 @@ $('body').scrollspy({
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
+
+
+
+$(document).ready(function() {
+// mostra esconde menu
+  $("a.mostra-esconde-menu").click(function(){
+    $(".menu_mluv_retratil").toggleClass('esconder');
+  });
+});
+
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});

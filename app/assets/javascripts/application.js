@@ -15,6 +15,7 @@
 //= require freelancer
 //= require cbpAnimatedHeader
 //= require classie
+//= require jquery_ujs
 //= require jqBootstrapValidation
 //= require turbolinks
 //= require_tree .

@@ -1,12 +1,18 @@
 class CompaniesController < ApplicationController
-  before_action :set_company, only: [:show, :edit, :update, :destroy]
+  before_action :set_company, only: [:show, :edit, :update, :destroy, :company_home]
+  layout "devise_company_application"
+  
+  def company_home
+    current_company = @company
+    respond_with(@company)
+  end
 
   def index
     @companies = Company.all
   end
 
   def show
-    @companies = Company.all
+    @company = Company.find(params[:id])
   end
 
   def new
@@ -53,6 +59,6 @@ class CompaniesController < ApplicationController
     end
 
     def company_params
-      params.require(:company).permit(:name, :email, :cnpj, :phone, :andress, :password, :access_token)
+      params.require(:company).permit(:id, :name, :email, :cnpj, :phone, :andress, :password, :access_token)
     end
 end
