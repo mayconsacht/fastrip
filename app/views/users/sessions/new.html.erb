@@ -1,17 +1,17 @@
- <div class="login">
-  <h2>Log in</h2>
+<div class="box-login">  
+  <h2>Painel de Autenticação</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-      <div class="row control-group">
-          <div class="field col-xs-8 form-group controls">
-              <%= f.email_field :email, class: 'form-control', autofocus: true %>
+      <div class="row control-group espacament">
+          <div class="field form-group controls">
+              <%= f.email_field :email, class: 'form-control', autofocus: true, placeholder: 'Informe seu e-mail' %>
           </div>
       </div>
 
-      <div class="row control-group">
-          <div class="field col-xs-8 form-group controls">
-              <%= f.password_field :password, class: 'form-control', autocomplete: "off" %>
+      <div class="row control-group espacament">
+          <div class="field form-group controls">
+              <%= f.password_field :password, class: 'form-control', autocomplete: "off", placeholder: 'Sua senha' %>
           </div>
       </div>
 
@@ -23,7 +23,15 @@
       <% end -%>
 
       <div class="actions">
-        <%= f.submit "Entrar" %>
+        <div class="row col-lg-offset-2 buttons-login">
+            <div class="col-lg-4">
+                    <%= f.submit "Entrar", :class => 'btn btn-info' %>       
+            </div>
+            <div class="pipe-login"> ou </div>
+            <div class="col-lg-4">
+                <%= link_to "", user_omniauth_authorize_path(:facebook), :class => "btn botao-fb" %>
+            </div>
+        </div>
       </div>
   
   <% end %>

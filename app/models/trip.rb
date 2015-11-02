@@ -3,6 +3,7 @@ class Trip < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :company
 	has_many   :posts
+	has_many   :user_requests
 
 	scope :with_name, lambda {|parameter| where("name like ?", "%#{parameter}%")}
 	scope :in_category, lambda {|parameter| where("category = ?", parameter)}

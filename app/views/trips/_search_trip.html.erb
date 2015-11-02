@@ -1,15 +1,4 @@
 <%= form_tag(trips_path, :method => "get") do %>
-  <div class="row control-group">
-    <div class="field col-xs-12 form-group controls">
-      <%= text_field_tag :with_name, nil, {class: 'form-control', placeholder: 'Nome'}  %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="field col-xs-12 form-group controls col-lg-offset-2 pass-one">
-      <%= text_field_tag :in_category, nil, {class: 'form-control', placeholder: 'Categoria'} %>
-    </div>
-  </div>
 
   <div class="row">
     <div class="field col-xs-12 form-group controls col-lg-offset-2 pass-one">
@@ -35,5 +24,17 @@
     </div>
   </div>
 
+  <div class="row control-group">
+    <div class="field col-xs-12 form-group controls">
+      <%= text_field_tag :with_name, nil, {class: 'form-control', placeholder: 'Nome'}  %>
+    </div>
+  </div>
+<!--
+  <div class="row">
+    <div class="field col-xs-12 form-group controls col-lg-offset-2 pass-one">
+      <%= text_field_tag :in_category, nil, {class: 'form-control', placeholder: 'Categoria'} %>
+    </div>
+  </div>
+-->
   <%= submit_tag "Buscar", { :class => 'btn btn-info'} %>
 <% end %>

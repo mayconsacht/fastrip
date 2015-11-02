@@ -1,0 +1,23 @@
+<div class='general-form-trips'>
+
+  <h1>Requisições de Contato</h1>
+  
+  <div>
+    <table class="table table-striped table-hover">
+      <tbody>
+        <% @trips.each do |trip| %>
+          <% trip.user_requests.each do |requests| %>
+            <tr>
+              <td><%= requests.user_name %></td>
+              <td><%= requests.user_phone %></td>
+              <td><div class="btn-group" role="group" aria-label="...">
+                <%= link_to 'Detalhar', trip, :class => 'btn btn-default'%>
+                <%= link_to 'Cancelar', trip, method: :delete, :class => 'btn btn-default', data: { confirm: 'Tem certeza que deseja deletar a viagem?' } %>
+              </div></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

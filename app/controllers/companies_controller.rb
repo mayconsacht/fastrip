@@ -2,11 +2,6 @@ class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy, :company_home]
   layout "devise_company_application"
   
-  def company_home
-    current_company = @company
-    respond_with(@company)
-  end
-
   def index
     @companies = Company.all
   end

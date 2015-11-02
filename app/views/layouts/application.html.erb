@@ -20,6 +20,22 @@
 
 	<body>
 		<nav class="navbar navbar-default navbar-fixed-top">
+
+	    	<div class='it-menu'>
+	            <% if user_signed_in? %>
+	         
+	                <%= link_to(content_tag(:i, nil, class: 'fa fa-suitcase'), user_path(current_user.id), "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Ver Viagens") %>
+	                <%= link_to(content_tag(:i, nil, class: 'fa fa-cog'), edit_user_registration_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Alterar Cadastro") %> 
+	                <%= link_to(content_tag(:i, nil, class: 'fa fa-sign-out'), destroy_user_session_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Sair", :method => :delete) %>
+	            
+	            <% elsif company_signed_in? %>
+	                
+	                <%= link_to(content_tag(:i, nil, class: 'fa fa-suitcase'), company_path(current_company.id), "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Ver Viagens") %>
+	                <%= link_to(content_tag(:i, nil, class: 'fa fa-cog'), edit_company_registration_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Alterar Cadastro") %> 
+	                <%= link_to(content_tag(:i, nil, class: 'fa fa-sign-out'), destroy_company_session_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Sair", :method => :delete) %>
+	        	<% end %>
+			</div>
+		    
 		    <div class="container">
 		        <div class="navbar-header page-scroll">
 		            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -38,46 +54,32 @@
 		                <li class="hidden">
 		                    <a href="/"></a>
 		                </li>
-			                <% if current_page?(controller: 'home', action: 'index') %>
-				                <li class="page-scroll">
-				                    <a href="#search-trip">Buscar viagens</a>
-				                </li>
-				                <li class="page-scroll">
-				                    <a href="#company">Ofertar viagens</a>
-				                </li>
-				                <li class="page-scroll">
-		                    <% if user_signed_in? %>
-		                        <p class='it-menu'>
-		                        Bem vindo <strong><%= current_user.name %></strong>!
-		                        <%= link_to 'Editar perfil', edit_user_registration_path %> 
-		                        <%= link_to 'Sair', destroy_user_session_path, :method => :delete %>
-		                        <p>
-		                    <% elsif company_signed_in? %>
-		                        <div class='it-menu'>
-
-		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-suitcase'), company_path(current_company.id), "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Ver Viagens") %>
-		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-cog'), edit_company_registration_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Alterar Cadastro") %> 
-		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-sign-out'), destroy_company_session_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Sair", :method => :delete) %>
-		                        </div>
-		                    <% end %>
-				                    <a href="#about">Sobre</a>
-				                </li>
-				            <% end %>
+		                <% if current_page?(controller: 'home', action: 'index') %>
+			                <li class="page-scroll">
+			                    <a href="#search-trip">Buscar viagens</a>
+			                </li>
+			                <li class="page-scroll">
+			                    <a href="#company">Ofertar viagens</a>
+			                </li>
+			                <li class="page-scroll">
+			                	<a href="#about">Sobre</a>
+			                </li>
+			            <% end %>
 				            
-		                <li class="page-scroll">
-		                	<% if not user_signed_in? and not company_signed_in? %>
-	                    	<div class="button-enter">
-	                            <%= link_to "Entrar", new_user_session_path, :class => 'btn submit-nav-buttons'  %>
-	                            <% end %>
-	                        </div>
-		                </li>
+	                	<li class="page-scroll">
+	                		<% if not user_signed_in? and not company_signed_in? %>
+                    			<div class="button-enter">
+                            		<%= link_to "Entrar", new_user_session_path, :class => 'btn submit-nav-buttons'  %>
+                        		</div>
+                        	<% end %>
+	                	</li>
 		            </ul>
 		        </div>
 		    </div>
 		</nav>
 
 	    <%= yield %>
-
+ 
 	    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 	</body>
 

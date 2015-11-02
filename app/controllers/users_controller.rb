@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  layout "devise_company_application"
 
   def index
     @users = User.all
   end
 
   def show
-    @user = User.find(params[:id])
+    @requests = UserRequests.where("user_id = ?", current_user.id)
+    
   end
 
   def new
@@ -14,10 +16,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-  end
-
-  def send_contact_to_company
-    
   end
 
   def create

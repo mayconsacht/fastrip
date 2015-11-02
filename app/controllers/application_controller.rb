@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   def layout_by_resource
    	if devise_controller?
    		
-      if resource_name == :user
+      if resource_name == :user or resource_name == :company
   			"devise_user_application"
 
    		elsif resource_name == :company
@@ -33,4 +33,9 @@ class ApplicationController < ActionController::Base
    		"application"
    	end
   end
+
+  def new_session_path(scope)
+    new_user_session_path
+  end
+  
 end

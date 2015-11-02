@@ -12,50 +12,56 @@
   <% end %>
 
   <div class="row control-group">
-    <div class="field col-xs-8 form-group controls">
+    <div class="field col-xs-12 form-group controls">
       <%= f.text_field :name, class: 'form-control', placeholder: 'Nome da Viagem/Local' %>
     </div>
   </div>
 
   <div class="row">
-    <div class="field col-xs-4 form-group controls col-lg-offset-2 pass-one">
+    <div class="field col-xs-6 form-group controls col-lg-offset-2 pass-one">
       <%= f.text_field :category, class: 'form-control', placeholder: 'Categoria' %>
     </div>
-    <div class="field col-xs-4 form-group controls">
+    <div class="field col-xs-6 form-group controls">
       <%= f.text_field :price, class: 'form-control', placeholder: 'Preço' %>
     </div>
   </div>
 
   <div class="row">
-    <div class="field col-xs-4 form-group controls col-lg-offset-2 pass-one">
+    <div class="field col-xs-6 form-group controls col-lg-offset-2 pass-one">
         <%= f.text_field :origin, class: 'form-control', placeholder: 'Origem' %>
     </div>
-    <div class="field col-xs-4 form-group controls">
+    <div class="field col-xs-6 form-group controls">
         <%= f.text_field :destination, class: 'form-control', placeholder: 'Destino' %>
     </div>
   </div>
 
   <div class="row">
-    <div class="field col-xs-4 form-group controls col-lg-offset-2 pass-one">
+    <div class="field col-xs-6 form-group controls col-lg-offset-2 pass-one">
       <%= f.date_select :in_date, start_year:  2015, class: 'form-control', placeholder: 'Data de Saída', order: [:day, :month, :year]  %>
     </div>
 
-    <div class="field col-xs-4 form-group controls">
+    <div class="field col-xs-6 form-group controls">
       <%= f.date_select :out_date, start_year: 2015, class: 'form-control', placeholder: 'Data de Volta', order: [:day, :month, :year] %>
     </div>
   </div>
 
   <div class="row control-group">
-    <div class="field col-xs-8 form-group controls">
+    <div class="field col-xs-12 form-group controls">
       <%= f.text_area :description, class: 'form-control', placeholder: 'Descrição' %>
     </div>
   </div>
   
-  <div class="row control-group">
-    <%= f.file_field :avatar %>
-  </div>
+  <div class="input-group control-group">
+  <span class="input-group-btn">
+    <span class="btn btn-primary btn-inverse", onclick="$(this).parent().find('input[type=file]').click();">Carregar Imagem</span>
+      <%= f.file_field :avatar, onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display: none;" %>
+  </span>
+  <span class="form-control"></span>
+</div>
+<br>
+
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Cadastrar", :class => 'btn btn-info' %>
   </div>
 <% end %>

@@ -34,25 +34,26 @@
 
 		        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		            <ul class="nav navbar-nav navbar-right ">
-
-		            	<li class="menu-panel">
-		            		<a href="" >
-		            			<i class="fa fa-suitcase fa-2x"></i>
-		            			<span >Minhas viagens</span>
-		            		</a>
-						</li>
-						<li class="menu-panel">
-							<a href="/trips/new">
-		            			<i class="fa fa-plus-circle fa-2x"></i>
-		            			<span>Adicionar Viagem</span>
-		            		</a>
-						</li>
-						<li class="menu-panel">
-							<a href="#">
-		            			<i class="fa fa-check-square-o fa-2x"></i>
-		            			<span>Confirmar usuários</span>
-		            		</a>
-						</li>
+		            	<% if company_signed_in? %>
+			            	<li class="menu-panel">
+			            		<a href="/companies/<%= current_company.id %>" >
+			            			<i class="fa fa-suitcase fa-2x"></i>
+			            			<span >Minhas viagens</span>
+			            		</a>
+							</li>
+							<li class="menu-panel">
+								<a href="/trips/new">
+			            			<i class="fa fa-plus-circle fa-2x"></i>
+			            			<span>Adicionar Viagem</span>
+			            		</a>
+							</li>
+							<li class="menu-panel">
+								<a href="/show_requests">
+			            			<i class="fa fa-check-square-o fa-2x"></i>
+			            			<span>Confirmar usuários</span>
+			            		</a>
+							</li>
+						<% end %>
 		                <li class="page-scroll">
 		                    <% if company_signed_in? %>
 		                    	<div class='it-menu-company'>
@@ -64,7 +65,12 @@
 		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-sign-out fa-2x'), destroy_company_session_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Sair", :method => :delete) %>
 		                        </div>
 		                    <% else %>
-		                        <%= link_to "Entrar", new_company_session_path, :class => 'btn submit-nav-buttons' %>
+		                     
+	                			<% if not user_signed_in? and not company_signed_in? %>
+                    				<div class="button-enter">
+                            			<%= link_to "Entrar", new_company_session_path, :class => 'btn submit-nav-buttons'  %>
+                        			</div>
+                        		<% end %>
 		                    <% end %>
 		                    <p>
 		                </li>
@@ -73,20 +79,23 @@
 		    </div>
 		</nav>
 		
-	    <%= yield %>
+		<div class='general-form'>
+	    	<%= yield %>
+	    </div>
 	    
-		<footer >
-	        <section id="footer" class="footer-section-home">
-	            <div class="container">
-	                <div class="row">
-	                	<div id="footer-copyright"class="col-xs-12">
-	                		<p class="footer"> &copy; 2015 Maycon Sacht - Todos os direitos reservados.</p>
-	                	</div>
-	                </div>
-	            </div>
-	        </section>
-	    </footer>
+		<footer>
+		        <section id="footer" class="footer-section-home">
+		            <div class="container">
+		                <div class="row">
+		                	<div id="footer-copyright"class="col-xs-12">
+		                		<p class="footer"> &copy; 2015 Maycon Sacht - Todos os direitos reservados.</p>
+		                	</div>
+		                </div>
+		            </div>
+		        </section>
+		</footer>
 
-	    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
 	</body>
 </html>

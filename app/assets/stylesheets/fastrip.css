@@ -15,6 +15,7 @@ html {
     height: 100%;
 }
 
+
 @media(min-width:770px) {
     .navbar {
         padding: 20px 0;
@@ -41,7 +42,7 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0 0 35px;
+    margin: 0 0 20px;
     font-family: "Raleway",sans-serif;
     font-weight: 10;
     letter-spacing: 0px;
@@ -119,9 +120,10 @@ p.about-text {
     line-height: 1.2;
 }
 
-p.it-menu {
-    color: white;
-    position: absolute;
+.it-menu {
+    position: fixed;
+    left: 89%;
+    z-index:1;
 }
 
 a,
@@ -246,16 +248,21 @@ a.active {
     padding-left: 5%;
 }
 
-.general-form {
-    padding-top: 10%;
-    padding-left: 28%;
-    padding-right: 13%;
+.general-trip {
+    position: relative;
+    top: 19%;
+    left: 28%;
+    right: 13%;
+    width: 42%;
+    height: 200px;
+    min-height: 90.7%;
 }
 
 .general-form-trips {
     padding: 5%; 
     padding-top: 10%;
     background: #E9EAED; 
+    min-height: 100%;
 }
 
 .search-form {
@@ -263,6 +270,18 @@ a.active {
     width: 400px;
     padding-top: 7%;
     margin-left: 55%; 
+}
+
+.table-container {
+    padding-left: 30%;
+}
+
+.search-form2 {
+    position:fixed;
+    width: 350px;
+    border-radius: 5px;
+    background: rgba(0,0,0,.5);
+    padding: 1%;
 }
 
 .pass-one {
@@ -278,11 +297,25 @@ a.active {
     padding-top: 0.3%;
 }
 
+.buttons-login {
+    margin-left: -15px;
+    padding: 0%;
+}
+
 .pipe {
     position: absolute;
     color: white;
     font-size: 18px;
     margin-left: 25%;
+    padding-top: 2%;
+    float: center;
+}
+
+.pipe-login {
+    position: absolute;
+    color: black;
+    font-size: 18px;
+    margin-left: 30%;
     padding-top: 2%;
     float: center;
 }
@@ -312,12 +345,12 @@ a.active {
 }
 
 .botao-fb{   
- background:url(fb-login.png);
- cursor:pointer;
- height: 50px;
- width: 245px;
- border-color: none;
- border: none;
+    background:url(fb-login.png);
+    cursor:pointer;
+    height: 50px;
+    width: 242px;
+    border-color: none;
+    border: none;
 }
 
 .subform-login {
@@ -325,12 +358,24 @@ a.active {
     padding-left: 10%;
     padding-right: 10%;
 }
-.login {
-    padding-top: 5%;
-    padding-left: 10%;
-    padding-right: 35%;
+
+.box-login {
+    position: relative;
+    top: 30%;
+    left: 35%;
+    right: 35%;
+    width: 26.5%;
 }
- 
+
+.espacament {
+    margin: 0px;
+}
+
+.general-form {
+    height: 90.7%;
+    background: #E9EAED; 
+}
+
 .submit-nav-buttons {
     background-color: white;
     color: black;
@@ -362,7 +407,7 @@ a.active {
 }
 
 .footer-section {
-    position: absolute;
+
     bottom: 0;
     width:100%;
     background: #242424;
@@ -370,8 +415,7 @@ a.active {
 }
 
 .footer-section-home {
-    position: relative;
-    bottom: 0;
+    margin-bottom: 0px;
     width:100%;
     background: #242424;
     padding-top: 1.7%;
@@ -519,4 +563,29 @@ p.about-description {
 
 .menu-panel:focus, .menu-panel:hover {
     background-color: #3D556E;
+}
+
+.title-trip {
+    font-size: 24px;
+    float: left;
+    font-style: bold;
+}
+
+.orig-dest {
+    font-size: 18px;
+    padding-top: 13%;
+}
+
+.td1-teste {
+    /*background-color: blue;*/
+    width: 50px;
+}
+
+.td2-teste {
+    /*background-color: red;*/
+    width: 60%;
+}
+
+.preco-trip {
+    float: right;
 }
