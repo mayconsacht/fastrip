@@ -258,6 +258,31 @@ a.active {
     min-height: 90.7%;
 }
 
+.background-yellow {
+    background: #FFFB98;
+}
+
+.background-green {
+    background: #9DFF98;
+}
+
+.background-red {
+    background: #FF9898;
+}
+.register-edit {
+    position: relative;
+    top: 19%;
+    left: 28%;
+    right: 13%;
+    width: 42%;
+    height: 200px;
+    min-height: 85.7%;   
+}
+
+.register-pos {
+    top: 29%;
+}
+
 .general-form-trips {
     padding: 5%; 
     padding-top: 10%;
@@ -318,6 +343,14 @@ a.active {
     margin-left: 30%;
     padding-top: 2%;
     float: center;
+}
+
+.pipe-register {
+    position: absolute;
+    color: black;
+    font-size: 18px;
+    margin-left: 23%;
+    padding-top: 2%;
 }
 
 .it-menu-company {

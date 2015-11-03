@@ -42,7 +42,9 @@
               <%= trip.description %></td>
               <td>
                 <div class="btn-group" role="group" aria-label="...">
+                    <% if user_signed_in? %>
                       <%= link_to 'Tenho interesse', user_request_path(:trip_id => trip.id), method: :post,:class => 'btn btn-default', :data => { :confirm => 'Se você confirmar mandaremos alguns dos seus dados pessoais de cadastro (Nome, Telefone e Email) para a agência de viagem entrar em contato. Confirma?' } %>
+                    <% end %>
                       <%= link_to 'Detalhar', trip, :class => 'btn btn-default'%>
                 </div>
               </td>

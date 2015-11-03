@@ -1,47 +1,60 @@
-<h2>Cadastrar Usuário</h2>
+<div class="general-form"> 
+  <div class="register-edit register-pos">
+    <h2>Cadastrar Usuário</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
 
-  <div class="row control-group">
-      <div class="field col-xs-8 form-group controls">
-          <%= f.text_field :name, class: 'form-control', placeholder: 'Nome Completo', autofocus: true %>
+      <div class="row control-group">
+          <div class="field col-xs-12 form-group controls">
+              <%= f.text_field :name, class: 'form-control', placeholder: 'Nome Completo', autofocus: true %>
+          </div>
       </div>
-  </div>
 
-  <div class="row">
-          <div class="field col-xs-4 form-group controls col-lg-offset-2 pass-one">
-              <%= f.text_field :cpf, class: 'form-control', placeholder: 'CPF', autofocus: true %>
-          </div>
-          <div class="field col-xs-4 form-group controls">
-              <%= f.text_field :phone, class: 'form-control', placeholder: 'Telefone', autofocus: true %>
-          </div>
-  </div>
-
-  <div class="row control-group">
-      <div class="field col-xs-8 form-group controls">
-          <%= f.text_field :andress, class: 'form-control', placeholder: 'Endereço', autofocus: true %>
+      <div class="row">
+              <div class="field col-xs-6 form-group controls col-lg-offset-2 pass-one">
+                  <%= f.text_field :cpf, class: 'form-control', placeholder: 'CPF', autofocus: true %>
+              </div>
+              <div class="field col-xs-6 form-group controls">
+                  <%= f.text_field :phone, class: 'form-control', placeholder: 'Telefone', autofocus: true %>
+              </div>
       </div>
-  </div>
 
-  <div class="row control-group">
-      <div class="field col-xs-8 form-group controls">
-          <%= f.email_field :email, class: 'form-control', placeholder: 'Email', autofocus: true %>
+      <div class="row control-group">
+          <div class="field col-xs-12 form-group controls">
+              <%= f.text_field :andress, class: 'form-control', placeholder: 'Endereço', autofocus: true %>
+          </div>
       </div>
-  </div>
 
-  <div class="row">
-          <div class="field col-xs-4 form-group controls col-lg-offset-2 pass-one">
-              <%= f.password_field :password, class: 'form-control', placeholder: 'Senha (minimo de 8 caracteres)', autocomplete: "off" %>
+      <div class="row control-group">
+          <div class="field col-xs-12 form-group controls">
+              <%= f.email_field :email, class: 'form-control', placeholder: 'Email', autofocus: true %>
           </div>
-          <div class="field col-xs-4 form-group controls">
-              <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirmação da Senha', autocomplete: "off" %>
-          </div>
-  </div>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "Enviar", :class => 'navbar-link btn btn-info bt-lg'%>
-  </div>
-<% end %>
+      <div class="row">
+              <div class="field col-xs-6 form-group controls col-lg-offset-2 pass-one">
+                  <%= f.password_field :password, class: 'form-control', placeholder: 'Senha (minimo de 8 caracteres)', autocomplete: "off" %>
+              </div>
+              <div class="field col-xs-6 form-group controls">
+                  <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirmação da Senha', autocomplete: "off" %>
+              </div>
+      </div>
 
-<%= render "devise/shared/links" %>
+      <div class="actions">
+        <div class="row col-lg-offset-2 buttons-login">
+            <div class="col-lg-3">
+                    <%= f.submit "Cadastrar", :class => 'btn btn-info' %>       
+            </div>
+            <div class="pipe-register"> ou </div>
+            <div class="col-lg-4">
+                <%= link_to "", user_omniauth_authorize_path(:facebook), :class => "btn botao-fb" %>
+            </div>
+        </div>
+      </div>
+
+    <% end %>
+
+    <%= render "users/shared/links" %>
+  </div>
+</div>

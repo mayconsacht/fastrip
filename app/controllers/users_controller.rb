@@ -7,8 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @requests = UserRequests.where("user_id = ?", current_user.id)
-    
+    @requests = UserRequest.where("user_id = ?", current_user.id)
   end
 
   def new

@@ -5,20 +5,20 @@
   <div>
     <table class="table table-striped table-hover">
       <tbody>
-        <% @user.trips.each do |trip| %>
+        <% @requests.each do |request| %>
           <tr>
-            <td><%= image_tag trip.avatar.url(:thumb), :class => 'thumbnail' %></td>
-            <td><%= trip.name %></td>
-            <td><%= trip.category %></td>
-            <td><%= trip.origin %></td>
-            <td><%= trip.destination %></td>
-            <td><%= trip.price %></td>
-            <td><%= trip.in_date %></td>
-            <td><%= trip.out_date %></td>
-            <td><%= trip.description %></td>
+            <td><%= image_tag request.trip.avatar.url(:thumb), :class => 'thumbnail' %></td>
+            <td><%= request.trip.name %></td>
+            <td><%= request.trip.category %></td>
+            <td><%= request.trip.origin %></td>
+            <td><%= request.trip.destination %></td>
+            <td><%= request.trip.price %></td>
+            <td><%= request.trip.in_date %></td>
+            <td><%= request.trip.out_date %></td>
+            <td><%= request.trip.description %></td>
             <td><div class="btn-group" role="group" aria-label="...">
-              <%= link_to 'Detalhar', trip, :class => 'btn btn-default'%>
-              <%= link_to 'Cancelar', trip, method: :delete, :class => 'btn btn-default', data: { confirm: 'Tem certeza que deseja deletar a viagem?' } %>
+              <%= link_to 'Detalhar', request.trip, :class => 'btn btn-default'%>
+              <%= link_to 'Cancelar', request.trip, method: :delete, :class => 'btn btn-default', data: { confirm: 'Tem certeza que deseja deletar a viagem?' } %>
             </div></td>
           </tr>
         <% end %>
