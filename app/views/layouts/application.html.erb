@@ -24,15 +24,15 @@
 	    	<div class='it-menu'>
 	            <% if user_signed_in? %>
 	         
-	                <%= link_to(content_tag(:i, nil, class: 'fa fa-suitcase'), user_path(current_user.id), "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Ver Viagens") %>
-	                <%= link_to(content_tag(:i, nil, class: 'fa fa-cog'), edit_user_registration_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Alterar Cadastro") %> 
-	                <%= link_to(content_tag(:i, nil, class: 'fa fa-sign-out'), destroy_user_session_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Sair", :method => :delete) %>
+	                <%= link_to(content_tag(:i, nil, class: 'fa fa-suitcase it-menu-company'), user_path(current_user.id), "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Ver Viagens") %>
+	                <%= link_to(content_tag(:i, nil, class: 'fa fa-cog it-menu-company'), edit_user_registration_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Alterar Cadastro") %> 
+	                <%= link_to(content_tag(:i, nil, class: 'fa fa-sign-out it-menu-company'), destroy_user_session_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Sair", :method => :delete) %>
 	            
 	            <% elsif company_signed_in? %>
 	                
-	                <%= link_to(content_tag(:i, nil, class: 'fa fa-suitcase'), company_path(current_company.id), "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Ver Viagens") %>
-	                <%= link_to(content_tag(:i, nil, class: 'fa fa-cog'), edit_company_registration_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Alterar Cadastro") %> 
-	                <%= link_to(content_tag(:i, nil, class: 'fa fa-sign-out'), destroy_company_session_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Sair", :method => :delete) %>
+	                <%= link_to(content_tag(:i, nil, class: 'fa fa-suitcase it-menu-company'), company_path(current_company.id), "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Ver Viagens") %>
+	                <%= link_to(content_tag(:i, nil, class: 'fa fa-cog it-menu-company'), edit_company_registration_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Alterar Cadastro") %> 
+	                <%= link_to(content_tag(:i, nil, class: 'fa fa-sign-out it-menu-company'), destroy_company_session_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Sair", :method => :delete) %>
 	        	<% end %>
 			</div>
 		    
@@ -79,7 +79,11 @@
 		</nav>
 
 	    <%= yield %>
- 
+
+	    <script>
+  			<%= yield :js %>
+		</script>
+	    
 	    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 	</body>
 

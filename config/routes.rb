@@ -21,9 +21,10 @@ Rails.application.routes.draw do
   root :to => 'home#index'
 
   post 'user_request', controller: 'user_requests', action: 'create'
-
   get 'show_requests', controller: 'user_requests', action: 'show_requests'
-
+  get 'approve_request', controller: 'user_requests', action: 'approve_request'
+  get 'reject_request', controller: 'user_requests', action: 'reject_request'
+  
   resources :companies
   resources :users
   resources :trips

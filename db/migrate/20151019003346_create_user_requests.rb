@@ -4,6 +4,7 @@ class CreateUserRequests < ActiveRecord::Migration
       t.string :user_name
       t.string :user_phone
       t.string :user_email
+      t.datetime   :trip_out_date
       t.string :status
       t.text   :user_message
       t.references :trip, index: true

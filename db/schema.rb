@@ -85,15 +85,16 @@ ActiveRecord::Schema.define(version: 20151030030904) do
   add_index "trips", ["user_id"], name: "index_trips_on_user_id", using: :btree
 
   create_table "user_requests", force: :cascade do |t|
-    t.string   "user_name",    limit: 255
-    t.string   "user_phone",   limit: 255
-    t.string   "user_email",   limit: 255
-    t.string   "status",       limit: 255
-    t.text     "user_message", limit: 65535
-    t.integer  "trip_id",      limit: 4
-    t.integer  "user_id",      limit: 4
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "user_name",     limit: 255
+    t.string   "user_phone",    limit: 255
+    t.string   "user_email",    limit: 255
+    t.datetime "trip_out_date"
+    t.string   "status",        limit: 255
+    t.text     "user_message",  limit: 65535
+    t.integer  "trip_id",       limit: 4
+    t.integer  "user_id",       limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "user_requests", ["trip_id"], name: "index_user_requests_on_trip_id", using: :btree

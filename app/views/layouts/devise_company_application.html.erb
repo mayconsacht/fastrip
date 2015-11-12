@@ -53,22 +53,39 @@
 			            			<span>Confirmar usuários</span>
 			            		</a>
 							</li>
+						<% elsif user_signed_in? %>
+			            	<li class="menu-panel">
+			            		<a href="/users/<%= current_user.id %>" >
+			            			<i class="fa fa-suitcase fa-2x"></i>
+			            			<span >Minhas viagens</span>
+			            		</a>
+							</li>
 						<% end %>
 		                <li class="page-scroll">
 		                    <% if company_signed_in? %>
 		                    	<div class='it-menu-company'>
-		                        Você está logado na empresa <strong><%= current_company.name %></strong>!
+		                        Você está logado como <strong><%= current_company.name %></strong>!
 		                        </div>
 
 		                        <div class='it-menu-conf'>
-		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-cog fa-2x'), edit_company_registration_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Alterar Cadastro") %> 
-		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-sign-out fa-2x'), destroy_company_session_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Sair", :method => :delete) %>
+		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-cog fa-2x it-menu-company'), edit_company_registration_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Alterar Cadastro") %> 
+		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-sign-out fa-2x it-menu-company'), destroy_company_session_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Sair", :method => :delete) %>
+		                        </div>
+		                    <% elsif user_signed_in? %>
+		                    
+		                    	<div class='it-menu-company'>
+		                        Você está logado como <strong><%= current_user.name %></strong>!
+		                        </div>
+
+		                        <div class='it-menu-conf'>
+		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-cog fa-2x it-menu-company'), edit_user_registration_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Alterar Cadastro") %> 
+		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-sign-out fa-2x it-menu-company'), destroy_user_session_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Sair", :method => :delete) %>
 		                        </div>
 		                    <% else %>
 		                     
 	                			<% if not user_signed_in? and not company_signed_in? %>
                     				<div class="button-enter">
-                            			<%= link_to "Entrar", new_company_session_path, :class => 'btn submit-nav-buttons'  %>
+                            			<%= link_to "Entrar", new_user_session_path, :class => 'btn submit-nav-buttons'  %>
                         			</div>
                         		<% end %>
 		                    <% end %>
@@ -82,6 +99,10 @@
 		<div class='general-form'>
 	    	<%= yield %>
 	    </div>
+
+	    <script>
+  			<%= yield :js %>
+		</script>
 	    
 		<footer>
 		        <section id="footer" class="footer-section-home">

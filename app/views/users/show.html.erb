@@ -1,8 +1,13 @@
 <div class='general-form-trips'>
 
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+  
   <h1>Minhas Viagens</h1>
   
-  <div>
+  <div class='panel panel-default'>
+
     <table class="table table-striped table-hover">
       <tbody>
         <% @requests.each do |request| %>
@@ -15,10 +20,15 @@
             <td><%= request.trip.price %></td>
             <td><%= request.trip.in_date %></td>
             <td><%= request.trip.out_date %></td>
-            <td><%= request.trip.description %></td>
+            <td><%= request.status %></td>
             <td><div class="btn-group" role="group" aria-label="...">
-              <%= link_to 'Detalhar', request.trip, :class => 'btn btn-default'%>
-              <%= link_to 'Cancelar', request.trip, method: :delete, :class => 'btn btn-default', data: { confirm: 'Tem certeza que deseja deletar a viagem?' } %>
+              <% if request.trip.out_date.past? %>
+                <%= link_to request.trip, :class => 'btn btn-default btn-xs' , remote: true do%>
+                  Avaliar
+                <% end %>
+              <% end %>
+              <%= link_to 'Detalhar', request.trip, :class => 'btn btn-default btn-xs'%>
+              <%= link_to 'Cancelar', request.trip, method: :delete, :class => 'btn btn-default btn-xs', data: { confirm: 'Tem certeza que deseja deletar a viagem?' } %>
             </div></td>
           </tr>
         <% end %>

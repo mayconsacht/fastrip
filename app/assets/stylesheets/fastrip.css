@@ -249,13 +249,12 @@ a.active {
 }
 
 .general-trip {
-    position: relative;
+    position: absolute;
     top: 19%;
     left: 28%;
     right: 13%;
     width: 42%;
     height: 200px;
-    min-height: 90.7%;
 }
 
 .background-yellow {
@@ -269,14 +268,16 @@ a.active {
 .background-red {
     background: #FF9898;
 }
+.background-blue {
+    background: #7A83FF;
+}
+
 .register-edit {
-    position: relative;
+    position: absolute;
     top: 19%;
     left: 28%;
     right: 13%;
     width: 42%;
-    height: 200px;
-    min-height: 85.7%;   
 }
 
 .register-pos {
@@ -393,7 +394,7 @@ a.active {
 }
 
 .box-login {
-    position: relative;
+    position: absolute;
     top: 30%;
     left: 35%;
     right: 35%;
@@ -405,7 +406,8 @@ a.active {
 }
 
 .general-form {
-    height: 90.7%;
+    height: auto;
+    min-height: 90.7%;
     background: #E9EAED; 
 }
 
@@ -616,9 +618,13 @@ p.about-description {
 
 .td2-teste {
     /*background-color: red;*/
-    width: 60%;
+    width: 100%;
 }
 
 .preco-trip {
+    float: right;
+}
+
+.pos-buttons {
     float: right;
 }

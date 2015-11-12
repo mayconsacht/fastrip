@@ -15,44 +15,8 @@
         </tr>
       </thead>
       
-      <tbody>
-        <% @trips.each do |trip| %>
-          <% trip.user_requests.each do |requests| %>
-            <tr>
-              <% if requests.status == 'pendent' %>
-                <td class="background-yellow"><%= trip.name %></td>
-                <td class="background-yellow"><%= requests.user_name %></td>
-                <td class="background-yellow"><%= requests.user_email %></td>
-                <td class="background-yellow"><%= requests.user_phone %></td>
-                <td class="background-yellow"><%= requests.status %></td>
-                <td class="background-yellow"><div class="btn-group" role="group" aria-label="...">
-                  <%= link_to 'Aprovar', trip, :class => 'btn btn-success'%>
-                  <%= link_to 'Rejeitar', trip, method: :delete, :class => 'btn btn-danger', data: { confirm: 'Tem certeza que deseja deletar a viagem?' } %>
-                </div></td>
-              <% elsif requests.status == 'accepted' %>
-                <td class="background-green"><%= trip.name %></td>
-                <td class="background-green"><%= requests.user_name %></td>
-                <td class="background-green"><%= requests.user_email %></td>
-                <td class="background-green"><%= requests.user_phone %></td>
-                <td class="background-green"><%= requests.status %></td>
-                <td class="background-green"><div class="btn-group" role="group" aria-label="...">
-                  <%= link_to 'Aprovar', trip, :class => 'btn btn-success'%>
-                  <%= link_to 'Rejeitar', trip, method: :delete, :class => 'btn btn-danger', data: { confirm: 'Tem certeza que deseja deletar a viagem?' } %>
-                </div></td>
-              <% elsif requests.status == 'refused' %>
-                <td class="background-red"><%= trip.name %></td>
-                <td class="background-red"><%= requests.user_name %></td>
-                <td class="background-red"><%= requests.user_email %></td>
-                <td class="background-red"><%= requests.user_phone %></td>
-                <td class="background-red"><%= requests.status %></td>
-                <td class="background-red"><div class="btn-group" role="group" aria-label="...">
-                  <%= link_to 'Aprovar', trip, :class => 'btn btn-success'%>
-                  <%= link_to 'Rejeitar', trip, method: :delete, :class => 'btn btn-danger', data: { confirm: 'Tem certeza que deseja deletar a viagem?' } %>
-                </div></td>
-              <% end %>
-            </tr>
-          <% end %>
-        <% end %>
+      <tbody id="request_list">
+        <%= render partial: 'list_request'%>
       </tbody>
     </table>
   </div>
