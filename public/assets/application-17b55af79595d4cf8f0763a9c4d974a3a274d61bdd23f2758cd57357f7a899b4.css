@@ -1,0 +1,706 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:300,400,500,700);
+
+body {
+    font-family: "Raleway",sans-serif;
+    color : #2B2B2B;
+    width: 100%;
+    height: 100%;
+    font-weight: 400;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+
+@media(min-width:770px) {
+    .navbar {
+        padding: 20px 0;
+
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+    }
+}
+
+hr {
+    max-width: 400px;
+    border-color: #fff;
+    border-width: 1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 20px;
+    font-family: "Raleway",sans-serif;
+    font-weight: 10;
+    letter-spacing: 0px;
+    color: #9B9A9A;
+}
+
+h1.title,
+h2.title,
+h2.title {
+    font-weight: bold;
+}
+
+h1.primary-title {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+h1.primary-title-ab {
+    text-align: center;
+    font-weight: bold;
+    color:#9B9A9A; 
+}
+
+h2.second-title{
+    color: white;
+    font-weight: bold;
+}
+
+
+h2.title-company {
+    color: white;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #646464;
+}
+
+p.footer {
+    font-size: 15px;
+    color:#fff;
+    font-weight: 100;
+    text-align: center;
+}
+
+p.contact {
+    margin: 0 0 35px;
+    font-size: 20px;
+    font-weight: 10;
+    letter-spacing: 0px;
+    color: #646464;   
+}
+
+p.company {
+    color: #fff;
+    font-weight: 500;
+    text-align: justify;
+}
+
+p.search-text {
+    text-align: center;
+    color: white;
+    font-size: 23px;
+    line-height: 1.2;
+}
+
+p.about-text {
+    text-align: center;
+    color: #9B9A9A;
+    font-size: 23px;
+    line-height: 1.2;
+}
+
+.it-menu {
+    position: fixed;
+    left: 89%;
+    z-index:1;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+    outline: 0;
+}
+
+.navbar {
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.navbar-custom {
+    color:#9B9A9A;
+    background-color:#FFFFFF;
+    border-radius:0;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color: #9B9A9A;
+}
+
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #000;
+    background-color:transparent;
+}
+
+.navbar-custom .navbar-brand {
+    color:#9B9A9A;
+    backgorund-color:#FFFFFF;
+    font-weight: 600;
+    font-size: 200%;
+}
+
+ .navbar-default .navbar-nav > .active{
+    color: #000;
+    background: #FFFFFF;
+ }
+ .navbar-default .navbar-nav > .active > a, 
+ .navbar-default .navbar-nav > .active > a:hover, 
+ .navbar-default .navbar-nav > .active > a:focus {
+    color: #000;
+    background: #FFFFFF;
+ }
+
+.navbar a:focus {
+    outline: 0;
+}
+
+.navbar .navbar-nav {
+    letter-spacing: 1px;
+}
+
+.navbar .navbar-nav li a:focus {
+    outline: 0;
+}
+
+
+.geral {
+    min-height:100%;
+    position:relative;
+}
+
+.to-traveler {
+    padding: 5%;
+    position: relative;
+    height: auto;
+    min-height:100%;
+    background-image: url(search-bg.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.travel-text{
+    position:relative;
+    width: 700px;
+    float: left;
+    padding-top: 13%;
+    text-shadow: 0 0 0.0001em #2C3E50, 0 0 0.0001em #2C3E50, 0 0 0.0001em #2C3E50;
+}
+
+.company-text {
+    position:relative;
+    width: 550px;
+    float: right;
+    padding-top: 8%;
+    text-shadow: 0 0 0.0001em #2C3E50, 0 0 0.0001em #2C3E50, 0 0 0.0001em #2C3E50;
+}
+
+.to-company {
+    position: relative;
+    height: auto;
+    min-height:100%;
+    padding: 5%;
+    padding-top: 12%;
+    background-image: url(company-bg.jpg);
+    background-attachment: absolute;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.about {
+    height: auto;
+    min-height:90%;
+    background: #E9EAED;
+    padding-top: 15%;
+}
+
+.about-text {
+    padding-left: 5%;
+}
+
+.general-trip {
+    position: absolute;
+    top: 19%;
+    left: 28%;
+    right: 13%;
+    width: 42%;
+    height: 200px;
+}
+
+.background-yellow {
+    background: #FFFB98;
+}
+
+.background-green {
+    background: #9DFF98;
+}
+
+.background-red {
+    background: #FF9898;
+}
+.background-blue {
+    background: #7A83FF;
+}
+
+.register-edit {
+    position: absolute;
+    top: 19%;
+    left: 28%;
+    right: 13%;
+    width: 42%;
+}
+
+.register-pos {
+    top: 29%;
+}
+
+.general-form-trips {
+    padding: 5%; 
+    padding-top: 10%;
+    background: #E9EAED; 
+    min-height: 100%;
+}
+
+.search-form {
+    position:absolute;
+    width: 400px;
+    padding-top: 7%;
+    margin-left: 55%; 
+}
+
+.table-container {
+    padding-left: 30%;
+}
+
+.search-form2 {
+    position:fixed;
+    width: 350px;
+    border-radius: 5px;
+    background: rgba(0,0,0,.5);
+    padding: 1%;
+}
+
+.pass-one {
+    left: 0px;
+    margin: 0;
+}
+
+.buttons-home {
+    padding-top: 3%;
+}
+
+.cad-button {
+    padding-top: 0.3%;
+}
+
+.buttons-login {
+    margin-left: -15px;
+    padding: 0%;
+}
+
+.pipe {
+    position: absolute;
+    color: white;
+    font-size: 18px;
+    margin-left: 25%;
+    padding-top: 2%;
+    float: center;
+}
+
+.pipe-login {
+    position: absolute;
+    color: black;
+    font-size: 18px;
+    margin-left: 30%;
+    padding-top: 2%;
+    float: center;
+}
+
+.pipe-register {
+    position: absolute;
+    color: black;
+    font-size: 18px;
+    margin-left: 23%;
+    padding-top: 2%;
+}
+
+.it-menu-company {
+    color: white;
+}
+
+.it-menu-conf {
+    float: right;
+    text-transform: none;    
+} 
+
+.nav-cus {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.menu1 {
+    top: 12%;
+    padding-right: 100%;
+}
+
+.button-enter {
+    padding-top: 12%;
+    padding-left: 15%;
+}
+
+.botao-fb{   
+    background:url(fb-login.png);
+    cursor:pointer;
+    height: 50px;
+    width: 242px;
+    border-color: none;
+    border: none;
+}
+
+.subform-login {
+    padding: 8%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.box-login {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    right: 35%;
+    width: 26.5%;
+}
+
+.espacament {
+    margin: 0px;
+}
+
+.general-form {
+    height: auto;
+    min-height: 90.7%;
+    background: #E9EAED; 
+}
+
+.submit-nav-buttons {
+    background-color: white;
+    color: black;
+    border: none;
+    font-size: 13px;
+}
+
+
+.submit-nav-buttons:focus, .submit-nav-buttons:hover {
+    background-color: #3498db;
+}
+
+.submit-buttons {
+    background-color: #FF6B00;
+    color: white;
+    border: none;
+    text-decoration:none;
+}
+
+
+.submit-buttons:focus, .submit-buttons:hover {
+    background-color: #FF4D00;
+}
+
+.form-control:focus {
+    border-color: #BABABA;
+    -webkit-box-shadow: 1px;
+    box-shadow: none;
+}
+
+.footer-section {
+
+    bottom: 0;
+    width:100%;
+    background: #242424;
+    padding-top: 1.7%;
+}
+
+.footer-section-home {
+    margin-bottom: 0px;
+    width:100%;
+    background: #242424;
+    padding-top: 1.7%;
+    min-height: 90%
+}
+
+p.about-description {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+    .intro-section .brand-heading { font-size: 30px; }
+    .intro-section .intro-text { font-size: 20px; }
+    .intro-section {padding-top: 20%;}
+
+    .btn-circle-sec {
+        padding-top: 5px;
+    }
+
+    .intro-section {
+        padding-top: 25%;
+    }
+    .produtos-section {
+        padding-top: 7%;
+    }
+    .empresa-section {
+        padding-top: 15%;
+    }
+    .localizacao-section {
+        padding-top: 15%;
+    }
+    .contato-section {
+        padding-top: 15%;
+    }     
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 0px) {
+    .intro-section .brand-heading { font-size: 30px; }
+    .intro-section .intro-text { font-size: 20px; }
+
+    .btn-circle-sec {
+        padding-top: 10px;
+    }
+
+    .intro-section {
+        padding-top: 25%;
+    }
+    .produtos-section {
+        padding-top: 7%;
+    }
+    .empresa-section {
+        padding-top: 15%;
+    }
+    .localizacao-section {
+        padding-top: 18%;
+    }
+    .contato-section {
+        padding-top: 18%;
+    }  
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    .intro-section .brand-heading { font-size: 35px; }
+    .intro-section .intro-text { font-size: 20px; }
+
+    .btn-circle-sec {
+        padding-top: 15px;
+    }
+
+    .intro-section {
+        padding-top: 25%;
+    }
+    .produtos-section {
+        padding-top: 7%;
+    }
+    .empresa-section {
+        padding-top: 15%;
+    }
+    .localizacao-section {
+        padding-top: 10%;
+    }
+    .contato-section {
+        padding-top: 10%;
+    }  
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    .intro-section .brand-heading { font-size: 40px; }
+    .intro-section .intro-text { font-size: 20px; }
+
+    .btn-circle-sec {
+        padding-top: 20px;
+    }
+
+    .intro-section {
+        padding-top: 15%;
+    }
+    .produtos-section {
+        padding-top: 10%;
+    }
+    .empresa-section {
+        padding-top: 15%;
+    }
+    .localizacao-section {
+        padding-top: 10%;
+    }
+    .contato-section {
+        padding-top: 10%;
+    }    
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+    .intro-section .brand-heading { font-size: 45px; }
+    .intro-section .intro-text { font-size: 25px; }
+
+    .btn-circle-sec {
+        padding-top: 25px;
+    }
+
+    .intro-section {
+        padding-top: 15%;
+    }
+    .produtos-section {
+        padding-top: 5%;
+    }
+    .empresa-section {
+        padding-top: 10%;
+    }
+    .localizacao-section {
+        padding-top: 5%;
+    }
+    .contato-section {
+        padding-top: 5%;
+    }
+}
+
+.menu-panel:focus, .menu-panel:hover {
+    background-color: #3D556E;
+}
+
+.title-trip {
+    font-size: 24px;
+    float: left;
+    font-style: bold;
+}
+
+.orig-dest {
+    font-size: 18px;
+    padding-top: 13%;
+}
+
+.td1-teste {
+    /*background-color: blue;*/
+    width: 50px;
+}
+
+.td2-teste {
+    /*background-color: red;*/
+    width: 100%;
+}
+
+.preco-trip {
+    float: right;
+}
+
+.pos-buttons {
+    float: right;
+}
+/* line 2, /home/maycon/projects/fastrip/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 8, /home/maycon/projects/fastrip/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 16, /home/maycon/projects/fastrip/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 21, /home/maycon/projects/fastrip/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 25, /home/maycon/projects/fastrip/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 31, /home/maycon/projects/fastrip/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 39, /home/maycon/projects/fastrip/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 50, /home/maycon/projects/fastrip/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ *= fastrip
+ *= bootstrap
+ *= bootstrap-responsive
+ *= font-awesome
+ */
+

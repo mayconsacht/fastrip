@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151030030904) do
+ActiveRecord::Schema.define(version: 20151019003346) do
 
   create_table "companies", force: :cascade do |t|
     t.datetime "created_at",                                      null: false
@@ -41,19 +41,10 @@ ActiveRecord::Schema.define(version: 20151030030904) do
   add_index "companies", ["phone"], name: "index_companies_on_phone", using: :btree
   add_index "companies", ["reset_password_token"], name: "index_companies_on_reset_password_token", unique: true, using: :btree
 
-  create_table "identities", force: :cascade do |t|
-    t.string   "provider",   limit: 255
-    t.string   "uid",        limit: 255
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
-  add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
-
   create_table "posts", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.date     "post_date"
+    t.integer  "point",      limit: 4
     t.text     "message",    limit: 65535
     t.integer  "trip_id",    limit: 4
     t.datetime "created_at",               null: false
@@ -140,5 +131,4 @@ ActiveRecord::Schema.define(version: 20151030030904) do
   add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
   add_index "users", ["user_name"], name: "index_users_on_user_name", using: :btree
 
-  add_foreign_key "identities", "users"
 end

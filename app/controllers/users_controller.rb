@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @requests = UserRequest.where("user_id = ?", current_user.id)
+    @post = Post.new
   end
 
   def new

@@ -11,7 +11,8 @@ Devise.setup do |config|
   config.password_length = 8..72
   config.reset_password_within = 6.hours
   config.sign_out_via = :delete
-  config.omniauth :facebook, "301190346718355", "660e4988cb620a4c4fb7783124f834d8",  scope: 'email,public_profile', info_fields: 'email,name'
+  config.omniauth :facebook, "301190346718355", "660e4988cb620a4c4fb7783124f834d8",  
+                  scope: 'email,public_profile', info_fields: 'email,name'
   config.scoped_views = true
 
 end

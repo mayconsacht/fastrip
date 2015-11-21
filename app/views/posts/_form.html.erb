@@ -1,0 +1,74 @@
+<% modal ||= false %>
+<% remote = modal ? true : false %>
+<%= form_for(@post, remote: remote, html: {role: :form, 'data-model' => 'post'}) do |f| %>
+
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+	Avalie a empresa. 
+	<div class="field form-group">
+		<div class="btn-group" data-toggle="buttons">
+
+      <%= f.label :point, class: "btn btn-primary btn-xs active" do %>
+        <%= f.radio_button :point, 1, checked: true %>
+        1
+      <% end %>
+      <%= f.label :point, class: "btn btn-primary btn-xs" do %>
+        <%= f.radio_button :point, 2 %>
+        2
+      <% end %>
+      <%= f.label :point, class: "btn btn-primary btn-xs" do %>
+        <%= f.radio_button :point, 3 %>
+        3
+      <% end %>
+      <%= f.label :point, class: "btn btn-primary btn-xs" do %>
+        <%= f.radio_button :point, 4 %>
+        4
+      <% end %>
+      <%= f.label :point, class: "btn btn-primary btn-xs" do %>
+        <%= f.radio_button :point, 5 %>
+        5
+      <% end %>
+      <%= f.label :point, class: "btn btn-primary btn-xs" do %>
+        <%= f.radio_button :point, 6 %>
+        6
+      <% end %>
+      <%= f.label :point, class: "btn btn-primary btn-xs" do %>
+        <%= f.radio_button :point, 7 %>
+        7
+      <% end %>
+      <%= f.label :point, class: "btn btn-primary btn-xs" do %>
+        <%= f.radio_button :point, 8 %>
+        8      <% end %>
+      <%= f.label :point, class: "btn btn-primary btn-xs" do %>
+        <%= f.radio_button :point, 9 %>
+        9
+      <% end %>
+      <%= f.label :point, class: "btn btn-primary btn-xs" do %>
+        <%= f.radio_button :point, 10 %>
+        10
+      <% end %>
+    </div>
+  </div>
+
+  <div class="form-group">
+  	Comente a sua experiência.
+    <%= f.text_area :message, class: 'form-control' %>
+    <span class="help-block"></span>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Submit', class: 'btn btn-default' %>
+  </div>
+
+<% end %>

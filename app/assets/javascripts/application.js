@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap
+//= require bootstrap.min
 //= require freelancer
 //= require cbpAnimatedHeader
 //= require classie
