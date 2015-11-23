@@ -1,41 +1,35 @@
-<div class='general-trip'>
+<div class='general-trip-detail'>
 
   <% render 'trips/form' %>
+  <p class="detail-title">
+    <strong><%= @trip.name %></strong>
+  </p>
+  
   <p>
-    <strong>Name:</strong>
-    <%= @trip.name %>
+    <%= image_tag @trip.avatar.url(:original) %>
   </p>
 
-
-  <p>
-    <strong>Origem</strong>
-    <%= @trip.origin %>
-  </p>
-
-  <p>
-    <strong>Destino</strong>
+  <div class="details-orig-dest">
+    <i class="fa fa-plane"></i>
+    <%= @trip.origin %><br>
+    <i class="fa fa-plane fa-rotate-90"></i>
     <%= @trip.destination %>
-  </p>
+  </div>
 
-  <p>
-    <strong>Data de Entrada</strong>
+  <div class="">
+    <i class="fa fa-arrow-right"></i>
     <%= @trip.in_date %>
-  </p>
-
-  <p>
-    <strong>Data de Saída</strong>
+    <i class="fa fa-arrow-left"></i>
     <%= @trip.out_date %>
-  </p>
+  </div>
 
-  <p>
-    <strong>Avatar</strong>
-    <%= image_tag @trip.avatar.url(:thumb) %>
-  </p>
+  <div>
+    <%= @trip.description %>
+  </div>
 
   <hr>
   <% @trip.posts.each do |post| %>
       <%= post.message %>
   <% end %>
-
 
 </div>

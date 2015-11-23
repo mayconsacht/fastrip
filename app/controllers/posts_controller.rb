@@ -7,9 +7,20 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.name = current_user.name
+    @post.save!
 
+    @posts = Post.where("trip_id = ?", @post.trip_id)
+
+    @trip = Trip.find(@post.trip_id)
+    Trip.update(@trip, average_points: @posts.average(:point))
+
+    @company = Company.find(@trip.company.id)
+    Company.update(@company, points: @company.trips.average(:average_points))    
+    
     respond_to do |format|
       if @post.save
+
         format.html { redirect_to @post, notice: 'Person was successfully created.' }
         format.json { render action: 'show', status: :created, location: @person }
         # added:
@@ -30,6 +41,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:id, :point, :name, :message)
+      params.require(:post).permit(:id, :trip_id, :point, :name, :message)
     end
 end

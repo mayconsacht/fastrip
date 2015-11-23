@@ -2,6 +2,7 @@
 <% remote = modal ? true : false %>
 <%= form_for(@post, remote: remote, html: {role: :form, 'data-model' => 'post'}) do |f| %>
 
+  <%= @trip_id = request.trip.id %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this person from being saved:</h2>
@@ -15,7 +16,7 @@
   <% end %>
 
 
-	Avalie a empresa. 
+	Avalie a empresa <%= request.trip.company %>
 	<div class="field form-group">
 		<div class="btn-group" data-toggle="buttons">
 
@@ -60,6 +61,8 @@
       <% end %>
     </div>
   </div>
+
+  <%= f.radio_button :trip_id, request.trip.id, class: "active" %>
 
   <div class="form-group">
   	Comente a sua experiência.

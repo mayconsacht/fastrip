@@ -9,6 +9,7 @@ class AddDeviseToCompanies < ActiveRecord::Migration
       t.string :phone
       t.string :andress
       t.string :access_token
+      t.float  :points
 
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

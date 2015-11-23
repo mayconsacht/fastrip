@@ -15,21 +15,6 @@ html {
     height: 100%;
 }
 
-
-@media(min-width:770px) {
-    .navbar {
-        padding: 20px 0;
-
-        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        transition: background .5s ease-in-out,padding .5s ease-in-out;
-    }
-
-    .top-nav-collapse {
-        padding: 0;
-    }
-}
-
 hr {
     max-width: 400px;
     border-color: #fff;
@@ -74,56 +59,13 @@ h2.second-title{
 }
 
 
+h3.second-title{
+    color: white;
+    font-weight: bold;
+}
+
 h2.title-company {
     color: white;
-}
-
-p {
-    margin-bottom: 20px;
-    font-size: 16px;
-    line-height: 1.4;
-    color: #646464;
-}
-
-p.footer {
-    font-size: 15px;
-    color:#fff;
-    font-weight: 100;
-    text-align: center;
-}
-
-p.contact {
-    margin: 0 0 35px;
-    font-size: 20px;
-    font-weight: 10;
-    letter-spacing: 0px;
-    color: #646464;   
-}
-
-p.company {
-    color: #fff;
-    font-weight: 500;
-    text-align: justify;
-}
-
-p.search-text {
-    text-align: center;
-    color: white;
-    font-size: 23px;
-    line-height: 1.2;
-}
-
-p.about-text {
-    text-align: center;
-    color: #9B9A9A;
-    font-size: 23px;
-    line-height: 1.2;
-}
-
-.it-menu {
-    position: fixed;
-    left: 89%;
-    z-index:1;
 }
 
 a,
@@ -133,6 +75,8 @@ a:active,
 a.active {
     outline: 0;
 }
+
+/* Menu */
 
 .navbar {
     text-transform: uppercase;
@@ -184,14 +128,33 @@ a.active {
     outline: 0;
 }
 
-
-.geral {
-    min-height:100%;
-    position:relative;
+.menu-text {
+    font-size: 12px;
 }
 
-.to-traveler {
-    padding: 5%;
+.it-menu-company {
+    color: white;
+    font-size: 12px;
+}
+
+.it-menu {
+    position: fixed;
+    left: 89%;
+    z-index:1;
+}
+
+
+/* Traveler styles */
+
+p.description-text {
+    text-align: center;
+    color: white;
+    font-size: 23px;
+    line-height: 1.2;
+    text-shadow: 0 0 0.0001em #2C3E50, 0 0 0.0001em #2C3E50, 0 0 0.0001em #2C3E50;
+}
+
+#to-traveler {
     position: relative;
     height: auto;
     min-height:100%;
@@ -205,27 +168,49 @@ a.active {
     background-size: cover;
 }
 
-.travel-text{
-    position:relative;
-    width: 700px;
+.general-search-text {
+    padding-top: 20%;
+}
+
+.general-login-on-text {
+    padding-top: 25%;   
+}
+
+.general-search-form {
+    padding-top: 17%;
+    padding-bottom: 4%;
+}
+
+.fb-button {   
+    background:url(fb-login.png);
+    cursor:pointer;
     float: left;
-    padding-top: 13%;
-    text-shadow: 0 0 0.0001em #2C3E50, 0 0 0.0001em #2C3E50, 0 0 0.0001em #2C3E50;
+    height: 50px;
+    width: 242px;
+    border-color: none;
+    border: none;
 }
 
-.company-text {
-    position:relative;
-    width: 550px;
-    float: right;
-    padding-top: 8%;
-    text-shadow: 0 0 0.0001em #2C3E50, 0 0 0.0001em #2C3E50, 0 0 0.0001em #2C3E50;
+.buttons-home {
+    padding-top: 3%;
 }
 
-.to-company {
+/* Company styles */
+
+p.company {
+    color: #fff;
+    font-weight: 500;
+    text-align: justify;
+}
+
+.infos {
+    font-size: 13px;
+}
+
+#to-company {
     position: relative;
     height: auto;
     min-height:100%;
-    padding: 5%;
     padding-top: 12%;
     background-image: url(company-bg.jpg);
     background-attachment: absolute;
@@ -235,6 +220,30 @@ a.active {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.company-register-form {
+    padding-top: 7%;
+}
+
+.company-register-text {
+    padding-top: 13%;
+}
+
+/* About styles */
+
+
+p.about-description {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+p.about-text {
+    text-align: center;
+    color: #9B9A9A;
+    font-size: 23px;
+    line-height: 1.2;
 }
 
 .about {
@@ -257,6 +266,36 @@ a.active {
     height: 200px;
 }
 
+/* footer */
+
+.footer-section {
+
+    bottom: 0;
+    width:100%;
+    background: #242424;
+    padding-top: 1.7%;
+}
+
+.footer-section-home {
+    margin-bottom: 0px;
+    width:100%;
+    background: #242424;
+    padding-top: 1.7%;
+    min-height: 90%
+}
+
+p.footer {
+    font-size: 15px;
+    color:#fff;
+    font-weight: 100;
+    text-align: center;
+    background: #242424;
+    margin-bottom: 30px;
+}
+
+
+
+
 .background-yellow {
     background: #FFFB98;
 }
@@ -273,41 +312,33 @@ a.active {
 }
 
 .register-edit {
-    position: absolute;
-    top: 19%;
-    left: 28%;
-    right: 13%;
-    width: 42%;
+    padding-top: 118px;
+    margin-left: 15%;
+    margin-right: 15%;
+    min-height: 100%;
 }
 
 .register-pos {
     top: 29%;
 }
 
+
+.geral {
+    min-height:100%;
+    position:relative;
+}
+
 .general-form-trips {
     padding: 5%; 
-    padding-top: 10%;
+    padding-top: 12%;
     background: #E9EAED; 
     min-height: 100%;
 }
 
-.search-form {
-    position:absolute;
-    width: 400px;
-    padding-top: 7%;
-    margin-left: 55%; 
-}
-
-.table-container {
-    padding-left: 30%;
-}
-
-.search-form2 {
-    position:fixed;
-    width: 350px;
+.search-box {
     border-radius: 5px;
     background: rgba(0,0,0,.5);
-    padding: 1%;
+    padding: 3%;
 }
 
 .pass-one {
@@ -315,26 +346,9 @@ a.active {
     margin: 0;
 }
 
-.buttons-home {
-    padding-top: 3%;
-}
-
-.cad-button {
-    padding-top: 0.3%;
-}
-
 .buttons-login {
     margin-left: -15px;
     padding: 0%;
-}
-
-.pipe {
-    position: absolute;
-    color: white;
-    font-size: 18px;
-    margin-left: 25%;
-    padding-top: 2%;
-    float: center;
 }
 
 .pipe-login {
@@ -354,9 +368,7 @@ a.active {
     padding-top: 2%;
 }
 
-.it-menu-company {
-    color: white;
-}
+
 
 .it-menu-conf {
     float: right;
@@ -376,15 +388,6 @@ a.active {
 .button-enter {
     padding-top: 12%;
     padding-left: 15%;
-}
-
-.botao-fb{   
-    background:url(fb-login.png);
-    cursor:pointer;
-    height: 50px;
-    width: 242px;
-    border-color: none;
-    border: none;
 }
 
 .subform-login {
@@ -441,158 +444,133 @@ a.active {
     box-shadow: none;
 }
 
-.footer-section {
-
-    bottom: 0;
-    width:100%;
-    background: #242424;
-    padding-top: 1.7%;
-}
-
-.footer-section-home {
-    margin-bottom: 0px;
-    width:100%;
-    background: #242424;
-    padding-top: 1.7%;
-    min-height: 90%
-}
-
-p.about-description {
-    font-size: 18px;
-    font-weight: 400;
-}
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) {
-    .intro-section .brand-heading { font-size: 30px; }
-    .intro-section .intro-text { font-size: 20px; }
-    .intro-section {padding-top: 20%;}
-
-    .btn-circle-sec {
-        padding-top: 5px;
+    .pipe {
+        display:none;
     }
 
-    .intro-section {
-        padding-top: 25%;
+    .fb-button {
+        float: none;
     }
-    .produtos-section {
-        padding-top: 7%;
+
+    .general-search-form {
+        padding-top: 4%;
     }
-    .empresa-section {
-        padding-top: 15%;
+
+    .general-login-on-text {
+        padding-top: 18%;   
     }
-    .localizacao-section {
-        padding-top: 15%;
-    }
-    .contato-section {
-        padding-top: 15%;
-    }     
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width : 0px) {
-    .intro-section .brand-heading { font-size: 30px; }
-    .intro-section .intro-text { font-size: 20px; }
-
-    .btn-circle-sec {
-        padding-top: 10px;
+    .pipe {
+        display:none;
     }
 
-    .intro-section {
-        padding-top: 25%;
+    .fb-button {
+        float: none;
     }
-    .produtos-section {
-        padding-top: 7%;
-    }
-    .empresa-section {
-        padding-top: 15%;
-    }
-    .localizacao-section {
-        padding-top: 18%;
-    }
-    .contato-section {
-        padding-top: 18%;
-    }  
 
+    .general-search-form {
+        padding-top: 4%;
+    }
+
+    .general-login-on-text {
+        padding-top: 18%;   
+    }
+
+    .search-box {
+        display: none;
+    }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
-    .intro-section .brand-heading { font-size: 35px; }
-    .intro-section .intro-text { font-size: 20px; }
-
-    .btn-circle-sec {
-        padding-top: 15px;
+    .navbar {
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
     }
 
-    .intro-section {
-        padding-top: 25%;
+    .top-nav-collapse {
+        padding: 0;
     }
-    .produtos-section {
-        padding-top: 7%;
-    }
-    .empresa-section {
-        padding-top: 15%;
-    }
-    .localizacao-section {
-        padding-top: 10%;
-    }
-    .contato-section {
-        padding-top: 10%;
-    }  
 
+    .pipe {
+        display:none;
+    }
+
+    .fb-button {
+        float: none;
+    }
+
+    .general-search-form {
+        padding-top: 4%;
+    }
+
+    .general-login-on-text {
+        padding-top: 18%;   
+    }
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
-    .intro-section .brand-heading { font-size: 40px; }
-    .intro-section .intro-text { font-size: 20px; }
-
-    .btn-circle-sec {
-        padding-top: 20px;
+    .pipe {
+        position: absolute;
+        color: white;
+        font-size: 15px;
+        margin-left: 36%;
+        padding-top: 2%;
+        float: center;
     }
 
-    .intro-section {
-        padding-top: 15%;
+    .pipe {
+        display:inherit;
     }
-    .produtos-section {
-        padding-top: 10%;
-    }
-    .empresa-section {
-        padding-top: 15%;
-    }
-    .localizacao-section {
-        padding-top: 10%;
-    }
-    .contato-section {
-        padding-top: 10%;
-    }    
 
+    .search-box {
+        display: inherit;
+    }
+
+    .fb-button {
+        float: left;
+    }
+
+    .general-search-form {
+        padding-top: 18%;
+    }
+
+    .general-login-on-text {
+        padding-top: 25%;   
+    }
 }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
-    .intro-section .brand-heading { font-size: 45px; }
-    .intro-section .intro-text { font-size: 25px; }
-
-    .btn-circle-sec {
-        padding-top: 25px;
+    .pipe {
+        font-size: 18px;
+        margin-left: 35%;
+        padding-top: 1%;
     }
 
-    .intro-section {
-        padding-top: 15%;
+    .pipe {
+        display:inherit;
     }
-    .produtos-section {
-        padding-top: 5%;
+
+    .fb-button {
+        float: left;
     }
-    .empresa-section {
-        padding-top: 10%;
+
+    .general-search-form {
+        padding-top: 18%;
     }
-    .localizacao-section {
-        padding-top: 5%;
-    }
-    .contato-section {
-        padding-top: 5%;
+
+    .general-login-on-text {
+        padding-top: 25%;   
     }
 }
 
@@ -608,23 +586,47 @@ p.about-description {
 
 .orig-dest {
     font-size: 18px;
-    padding-top: 13%;
+    padding-top: 85px;
 }
 
 .td1-teste {
-    /*background-color: blue;*/
     width: 50px;
 }
 
 .td2-teste {
-    /*background-color: red;*/
     width: 100%;
 }
 
 .preco-trip {
     float: right;
+    font-size: 30px;
+    padding-top: 70px;
+    padding-left: 42%
 }
 
 .pos-buttons {
     float: right;
+}
+
+.per-people{
+    font-size: 20px;
+}
+
+/* Details page */
+
+.detail-title {
+    font-size: 30px;
+}
+
+.details-orig-dest {
+    font-size: 18px;
+    padding-top: 5px;
+}
+
+.general-trip-detail {
+    padding-top: 115px;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: justify;
+    min-height: 100%;
 }

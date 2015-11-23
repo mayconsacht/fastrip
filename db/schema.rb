@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20151019003346) do
     t.string   "phone",                  limit: 255
     t.string   "andress",                limit: 255
     t.string   "access_token",           limit: 255
+    t.float    "points",                 limit: 24
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -43,7 +44,6 @@ ActiveRecord::Schema.define(version: 20151019003346) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "name",       limit: 255
-    t.date     "post_date"
     t.integer  "point",      limit: 4
     t.text     "message",    limit: 65535
     t.integer  "trip_id",    limit: 4
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20151019003346) do
     t.string   "origin",              limit: 255
     t.string   "destination",         limit: 255
     t.float    "price",               limit: 24
+    t.float    "average_points",      limit: 24
     t.date     "in_date"
     t.date     "out_date"
     t.text     "description",         limit: 65535

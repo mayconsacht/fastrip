@@ -5,7 +5,8 @@ class CreateTrips < ActiveRecord::Migration
       t.string :name
       t.string :origin
       t.string :destination
-      t.float :price
+      t.float  :price
+      t.float  :average_points
       t.date :in_date
       t.date :out_date
       t.text :description

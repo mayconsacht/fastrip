@@ -37,49 +37,49 @@
 		            	<% if company_signed_in? %>
 			            	<li class="menu-panel">
 			            		<a href="/companies/<%= current_company.id %>" >
-			            			<i class="fa fa-suitcase fa-2x"></i>
-			            			<span >Minhas viagens</span>
+			            			<i class="fa fa-suitcase"></i>
+			            			<span class="menu-text">Minhas viagens</span>
 			            		</a>
 							</li>
 							<li class="menu-panel">
 								<a href="/trips/new">
-			            			<i class="fa fa-plus-circle fa-2x"></i>
-			            			<span>Adicionar Viagem</span>
+			            			<i class="fa fa-plus-circle"></i>
+			            			<span class="menu-text">Adicionar Viagem</span>
 			            		</a>
 							</li>
 							<li class="menu-panel">
 								<a href="/show_requests">
-			            			<i class="fa fa-check-square-o fa-2x"></i>
-			            			<span>Confirmar usuários</span>
+			            			<i class="fa fa-check-square-o"></i>
+			            			<span class="menu-text">Confirmar usuários</span>
 			            		</a>
 							</li>
 						<% elsif user_signed_in? %>
 			            	<li class="menu-panel">
 			            		<a href="/users/<%= current_user.id %>" >
-			            			<i class="fa fa-suitcase fa-2x"></i>
-			            			<span >Minhas viagens</span>
+			            			<i class="fa fa-suitcase"></i>
+			            			<span class="menu-text">Minhas viagens</span>
 			            		</a>
 							</li>
 						<% end %>
 		                <li class="page-scroll">
 		                    <% if company_signed_in? %>
-		                    	<div class='it-menu-company'>
+		                    	<div class='it-menu-company menu-text'>
 		                        Você está logado como <strong><%= current_company.name %></strong>!
 		                        </div>
 
 		                        <div class='it-menu-conf'>
-		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-cog fa-2x it-menu-company'), edit_company_registration_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Alterar Cadastro") %> 
-		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-sign-out fa-2x it-menu-company'), destroy_company_session_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Sair", :method => :delete) %>
+		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-cog it-menu-company'), edit_company_registration_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Alterar Cadastro") %> 
+		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-sign-out it-menu-company'), destroy_company_session_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Sair", :method => :delete) %>
 		                        </div>
 		                    <% elsif user_signed_in? %>
 		                    
-		                    	<div class='it-menu-company'>
+		                    	<div class='it-menu-company menu-text'>
 		                        Você está logado como <strong><%= current_user.name %></strong>!
 		                        </div>
 
 		                        <div class='it-menu-conf'>
-		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-cog fa-2x it-menu-company'), edit_user_registration_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Alterar Cadastro") %> 
-		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-sign-out fa-2x it-menu-company'), destroy_user_session_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Sair", :method => :delete) %>
+		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-cog fa it-menu-company'), edit_user_registration_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Alterar Cadastro") %> 
+		                        <%= link_to(content_tag(:i, nil, class: 'fa fa-sign-out it-menu-company'), destroy_user_session_path, "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Sair", :method => :delete) %>
 		                        </div>
 		                    <% else %>
 		                     

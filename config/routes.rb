@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get 'approve_request', controller: 'user_requests', action: 'approve_request'
   get 'reject_request', controller: 'user_requests', action: 'reject_request'
  
+  get 'get_attributes_post', controller: 'users', action: 'get_attributes_post'
   resources :companies
   resources :users
   resources :trips

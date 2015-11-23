@@ -1,45 +1,51 @@
-<section id="search-trip" class="to-traveler">
-    <div class="container">
-        <div class="row">
-            <div class="travel-text col-lg-9">
-                <h1 class="primary-title">Bem Vindo ao FASTRIP!</h1>
-
-                <p class="search-text">Aqui você encontra a sua viagem desejada e solicita a empresa responsável que entre em contato para fechar negócio. 
-                </p>
-                <p class="search-text">É simples e fácil, basta cadastrar-se para poder fazer solicitações, dar feedbacks sobre viagens que você já concretizou, ter um histórico de suas viagens e muito mais!
-                </p>
-            
+<section id="to-traveler">
+    <div id="search-trip">
+        <div class="container">
+            <div class="row">
                 <% if not user_signed_in? %>
-                    <div class="row col-lg-offset-2 text-center buttons-home">
-                        <div class="col-lg-4 cad-button">
-                                <%= link_to "Cadastrar-se", new_user_registration_path, :class => 'btn submit-buttons'  %>       
-                        </div>
-                        <div class="pipe"> ou </div>
-                        <div class="col-lg-4">
-                            <%= link_to "", user_omniauth_authorize_path(:facebook), :class => "btn botao-fb" %>
-                        </div>
-                    </div>
+                    <div class="col-md-7 general-search-text">
+                <% else %>
+                    <div class="col-md-7 general-login-on-text">
                 <% end %>
-            </div> 
-            <div class="search-form">
-                <h2 class='second-title'>BUSCAR VIAGENS</h2><br>
-                <%= render 'trips/search_trip' %>
+                    <h1 class="primary-title">Bem Vindo ao FASTRIP!</h1>
+
+                    <p class="description-text">Aqui você encontra a sua viagem desejada e solicita a empresa responsável que entre em contato para fechar negócio. 
+                    </p>
+                    <p class="description-text">É simples e fácil, basta cadastrar-se para poder fazer solicitações, dar feedbacks sobre viagens que você já concretizou, ter um histórico de suas viagens e muito mais!
+                    </p>
+                
+                    <% if not user_signed_in? %>
+                        <div class="row text-center">
+                            <div class="col-md-6">
+                                    <%= link_to "Cadastrar-se", new_user_registration_path, :class => 'btn submit-buttons'  %>       
+                            </div>
+                            <div class="pipe"> ou você pode</div>
+                            <div class="col-md-6">
+                                <%= link_to "", user_omniauth_authorize_path(:facebook), :class => "btn fb-button" %>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+                <div class="col-md-5 general-search-form">
+                    <h2 class='second-title'>BUSCAR VIAGENS</h2><br>
+                    <%= render 'trips/search_trip' %>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section id="company" class='to-company success conteudo'>
+<section id="to-company">
     <div class="container">
         <div class="row">
-            <div class="company-registration col-lg-6">
+            <div class="col-md-6 company-register-form">
                 <h2 class="second-title">CADASTRE A SUA EMPRESA</h2><br>
                 <%= render 'companies/registrations/new' %>
             </div>
 
-            <div class="col-lg-5 text-center company-text">
+            <div class="col-md-6 text-center company-register-text">
                 <h1 class="primary-title">Oferte as suas viagens!</h1>
-                <p class="search-text">Cadastre a agência de viagem para poder cadastrar e gerenciar as suas viagens que ficarão disponíveis para que seus clientes solicitem aprovação na viagem e retornem feedbacks sobre os serviços prestados pela empresa.
+                <p class="description-text">Cadastre a agência de viagem para poder cadastrar e gerenciar as suas viagens que ficarão disponíveis para que seus clientes solicitem aprovação na viagem e retornem feedbacks sobre os serviços prestados pela empresa.
                 </p>
             </div>
         </div>
@@ -49,15 +55,15 @@
 <section  id="about" class="about">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 text-center">
+            <div class="col-md-12 text-center">
                 <h1 class="primary-title-ab primary-title ">Sobre</h1><br>
             </div>
         </div>
         <div class="row text-center">
-            <div class="col-lg-6">
+            <div class="col-md-6">
                 <p class='about-text'>Muito Prazer, sou Maycon Rafael Sacht, estudante de Bacharelado em Sistemas de Informação do Centro Universitário Católica de Santa Catarina. O Fastrip foi desenvolvido como proposta para o meu trabalho de conclusão de curso durante o ano de 2015.</p>
             </div>
-            <div class="col-lg-6">
+            <div class="col-md-6">
                 <p class='about-text'>O objetivo do Fastrip é ser um canal centralizado de informações referentes a viagens onde tanto agências de viagens quanto usuários que estejam a procura de serviços oferecidos por estas agências possam ter agilidade no processo de contratação destes serviços. </p>
             </div>
 

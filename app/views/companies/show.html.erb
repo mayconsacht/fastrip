@@ -16,11 +16,10 @@
               <td><%= trip.price %></td>
               <td><%= trip.in_date %></td>
               <td><%= trip.out_date %></td>
-              <td><%= trip.description %></td>
               <td><div class="btn-group" role="group" aria-label="...">
-                <%= link_to 'Detalhar', trip, :class => 'btn btn-default'%>
-                <%= link_to 'Editar', edit_trip_path(trip), :class => 'btn btn-default' %>
-                <%= link_to 'Cancelar', trip, method: :delete, :class => 'btn btn-default', :data => { :confirm => 'Tem certeza que deseja deletar a viagem?' } %>
+                <%= link_to 'Detalhar', trip, :class => 'btn btn-default btn-xs'%>
+                <%= link_to 'Editar', edit_trip_path(trip), :class => 'btn btn-default btn-xs' %>
+                <%= link_to 'Cancelar', trip, method: :delete, :class => 'btn btn-default btn-xs', :data => { :confirm => 'Tem certeza que deseja deletar a viagem?' } %>
               </div></td>
             </tr>
           <% end %>

@@ -6,48 +6,48 @@
       <%= devise_error_messages! %>
 
       <div class="row control-group">
-          <div class="field col-xs-12 form-group controls">
+          <div class="field col-md-12 form-group controls">
               <%= f.text_field :name, class: 'form-control', placeholder: 'Nome Completo', autofocus: true %>
           </div>
       </div>
 
       <div class="row">
-              <div class="field col-xs-6 form-group controls col-lg-offset-2 pass-one">
+              <div class="field col-md-6 form-group controls col-md-offset-2 pass-one">
                   <%= f.text_field :cpf, class: 'form-control', placeholder: 'CPF', autofocus: true %>
               </div>
-              <div class="field col-xs-6 form-group controls">
+              <div class="field col-md-6 form-group controls">
                   <%= f.text_field :phone, class: 'form-control', placeholder: 'Telefone', autofocus: true %>
               </div>
       </div>
 
       <div class="row control-group">
-          <div class="field col-xs-12 form-group controls">
+          <div class="field col-md-12 form-group controls">
               <%= f.text_field :andress, class: 'form-control', placeholder: 'Endereço', autofocus: true %>
           </div>
       </div>
 
       <div class="row control-group">
-          <div class="field col-xs-12 form-group controls">
+          <div class="field col-md-12 form-group controls">
               <%= f.email_field :email, class: 'form-control', placeholder: 'Email', autofocus: true %>
           </div>
       </div>
 
       <div class="row">
-              <div class="field col-xs-6 form-group controls col-lg-offset-2 pass-one">
+              <div class="field col-md-6 form-group controls col-md-offset-2 pass-one">
                   <%= f.password_field :password, class: 'form-control', placeholder: 'Senha (minimo de 8 caracteres)', autocomplete: "off" %>
               </div>
-              <div class="field col-xs-6 form-group controls">
+              <div class="field col-md-6 form-group controls">
                   <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirmação da Senha', autocomplete: "off" %>
               </div>
       </div>
 
       <div class="actions">
-        <div class="row col-lg-offset-2 buttons-login">
-            <div class="col-lg-3">
+        <div class="row col-md-offset-2 buttons-login">
+            <div class="col-md-3">
                     <%= f.submit "Cadastrar", :class => 'btn btn-info' %>       
             </div>
             <div class="pipe-register"> ou </div>
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 <%= link_to "", user_omniauth_authorize_path(:facebook), :class => "btn botao-fb" %>
             </div>
         </div>
