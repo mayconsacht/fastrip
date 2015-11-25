@@ -2,71 +2,70 @@
 <% remote = modal ? true : false %>
 <%= form_for(@post, remote: remote, html: {role: :form, 'data-model' => 'post'}) do |f| %>
 
-  <%= @trip_id = request.trip.id %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this person from being saved:</h2>
-
-      <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-	Avalie a empresa <%= request.trip.company %>
-	<div class="field form-group">
+	De uma nota e comente os serviços oferecidos pela <%= request.trip.company.name %>
+	
+  <div class="field form-group point-comp">
 		<div class="btn-group" data-toggle="buttons">
 
-      <%= f.label :point, class: "btn btn-primary btn-xs active" do %>
-        <%= f.radio_button :point, 1, checked: true %>
+      <%= f.label :note, class: "btn btn-primary btn-xs active" do %>
+        <%= f.radio_button :note, 1, checked: true %>
         1
       <% end %>
-      <%= f.label :point, class: "btn btn-primary btn-xs" do %>
-        <%= f.radio_button :point, 2 %>
+      <%= f.label :note, class: "btn btn-primary btn-xs" do %>
+        <%= f.radio_button :note, 2 %>
         2
       <% end %>
-      <%= f.label :point, class: "btn btn-primary btn-xs" do %>
-        <%= f.radio_button :point, 3 %>
+      <%= f.label :note, class: "btn btn-primary btn-xs" do %>
+        <%= f.radio_button :note, 3 %>
         3
       <% end %>
-      <%= f.label :point, class: "btn btn-primary btn-xs" do %>
-        <%= f.radio_button :point, 4 %>
+      <%= f.label :note, class: "btn btn-primary btn-xs" do %>
+        <%= f.radio_button :note, 4 %>
         4
       <% end %>
-      <%= f.label :point, class: "btn btn-primary btn-xs" do %>
-        <%= f.radio_button :point, 5 %>
+      <%= f.label :note, class: "btn btn-primary btn-xs" do %>
+        <%= f.radio_button :note, 5 %>
         5
       <% end %>
-      <%= f.label :point, class: "btn btn-primary btn-xs" do %>
-        <%= f.radio_button :point, 6 %>
+      <%= f.label :note, class: "btn btn-primary btn-xs" do %>
+        <%= f.radio_button :note, 6 %>
         6
       <% end %>
-      <%= f.label :point, class: "btn btn-primary btn-xs" do %>
-        <%= f.radio_button :point, 7 %>
+      <%= f.label :note, class: "btn btn-primary btn-xs" do %>
+        <%= f.radio_button :note, 7 %>
         7
       <% end %>
-      <%= f.label :point, class: "btn btn-primary btn-xs" do %>
-        <%= f.radio_button :point, 8 %>
+      <%= f.label :note, class: "btn btn-primary btn-xs" do %>
+        <%= f.radio_button :note, 8 %>
         8      <% end %>
-      <%= f.label :point, class: "btn btn-primary btn-xs" do %>
-        <%= f.radio_button :point, 9 %>
+      <%= f.label :note, class: "btn btn-primary btn-xs" do %>
+        <%= f.radio_button :note, 9 %>
         9
       <% end %>
-      <%= f.label :point, class: "btn btn-primary btn-xs" do %>
-        <%= f.radio_button :point, 10 %>
+      <%= f.label :note, class: "btn btn-primary btn-xs" do %>
+        <%= f.radio_button :note, 10 %>
         10
       <% end %>
     </div>
   </div>
 
-  <%= f.radio_button :trip_id, request.trip.id, class: "active" %>
+  <%= f.radio_button :trip_id, request.trip.id, checked: true, class: "active", style: "display:none;"%>
+  
+  <div class="form-group">
+  	 Pontos positivos <i class="fa fa-smile-o"></i>
+    <%= f.text_area :opinion_best, class: 'form-control' %>
+    <span class="help-block"></span>
+  </div>
 
   <div class="form-group">
-  	Comente a sua experiência.
-    <%= f.text_area :message, class: 'form-control' %>
+    Pontos negativos <i class="fa fa-frown-o"></i>
+    <%= f.text_area :opinion_worst, class: 'form-control' %>
+    <span class="help-block"></span>
+  </div>
+
+  <div class="form-group">
+    Comente a sua expêriencia com a/o <%= request.trip.name %>
+    <%= f.text_area :opinion_local, class: 'form-control' %>
     <span class="help-block"></span>
   </div>
 

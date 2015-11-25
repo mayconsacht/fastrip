@@ -2,14 +2,14 @@ class AddDeviseToCompanies < ActiveRecord::Migration
   def self.up
     change_table(:companies) do |t|
       ## Database authenticatable
-      t.string :email,              null: false, default: ""
+      t.string :email,              null: false, default: "", limit: 40
       t.string :encrypted_password, null: false, default: ""
-      t.string :name
-      t.string :cnpj
-      t.string :phone
+      t.string :name, limit: 40
+      t.string :cnpj, limit: 15
+      t.string :phone, limit: 11
       t.string :andress
       t.string :access_token
-      t.float  :points
+      t.float  :note_average
 
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

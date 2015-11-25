@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151019003346) do
+ActiveRecord::Schema.define(version: 20151124234343) do
 
   create_table "companies", force: :cascade do |t|
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
-    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "email",                  limit: 40,  default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
-    t.string   "name",                   limit: 255
-    t.string   "cnpj",                   limit: 255
-    t.string   "phone",                  limit: 255
+    t.string   "name",                   limit: 40
+    t.string   "cnpj",                   limit: 15
+    t.string   "phone",                  limit: 11
     t.string   "andress",                limit: 255
     t.string   "access_token",           limit: 255
-    t.float    "points",                 limit: 24
+    t.float    "note_average",           limit: 24
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -43,12 +43,14 @@ ActiveRecord::Schema.define(version: 20151019003346) do
   add_index "companies", ["reset_password_token"], name: "index_companies_on_reset_password_token", unique: true, using: :btree
 
   create_table "posts", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.integer  "point",      limit: 4
-    t.text     "message",    limit: 65535
-    t.integer  "trip_id",    limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "name",          limit: 40
+    t.integer  "note",          limit: 2
+    t.text     "opinion_local", limit: 65535
+    t.text     "opinion_best",  limit: 65535
+    t.text     "opinion_worst", limit: 65535
+    t.integer  "trip_id",       limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "posts", ["trip_id"], name: "index_posts_on_trip_id", using: :btree
@@ -95,10 +97,10 @@ ActiveRecord::Schema.define(version: 20151019003346) do
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
-    t.string   "name",                   limit: 255
-    t.string   "email",                  limit: 255
-    t.string   "cpf",                    limit: 255
-    t.string   "phone",                  limit: 255
+    t.string   "name",                   limit: 40
+    t.string   "email",                  limit: 40
+    t.string   "cpf",                    limit: 18
+    t.string   "phone",                  limit: 11
     t.string   "andress",                limit: 255
     t.string   "access_token",           limit: 255
     t.string   "photo_url",              limit: 255
@@ -112,8 +114,8 @@ ActiveRecord::Schema.define(version: 20151019003346) do
     t.string   "current_sign_in_ip",     limit: 255
     t.string   "last_sign_in_ip",        limit: 255
     t.string   "user_name",              limit: 255
-    t.string   "oauth_token",            limit: 255
     t.string   "token_secret",           limit: 255
+    t.string   "oauth_token",            limit: 255
     t.string   "provider",               limit: 255
     t.string   "uid",                    limit: 255
   end
@@ -123,7 +125,6 @@ ActiveRecord::Schema.define(version: 20151019003346) do
   add_index "users", ["cpf"], name: "index_users_on_cpf", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["name"], name: "index_users_on_name", using: :btree
-  add_index "users", ["oauth_token"], name: "index_users_on_oauth_token", using: :btree
   add_index "users", ["phone"], name: "index_users_on_phone", using: :btree
   add_index "users", ["photo_url"], name: "index_users_on_photo_url", using: :btree
   add_index "users", ["provider"], name: "index_users_on_provider", using: :btree
@@ -131,5 +132,10 @@ ActiveRecord::Schema.define(version: 20151019003346) do
   add_index "users", ["token_secret"], name: "index_users_on_token_secret", using: :btree
   add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
   add_index "users", ["user_name"], name: "index_users_on_user_name", using: :btree
+
+  create_table "users_trips", force: :cascade do |t|
+    t.integer "user_id", limit: 4
+    t.integer "trip_id", limit: 4
+  end
 
 end

@@ -294,7 +294,44 @@ p.footer {
 }
 
 
+/* trips styles */
 
+.trip-description {
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+/* Posts styles */
+
+.box-comment {
+    border-bottom: 1px solid #CCCDD3;
+    padding: 20px; 
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+}
+
+.comments-title {
+    font-size: 25px;
+    font-style: bold;
+}
+
+.post-message {
+    padding-top: 15px;
+}
+
+.post-name {
+    font-size: 18px;
+    font-style: bold;
+}
+
+.display-button`{
+    display: none;
+}
+
+.point-comp{
+    padding-top: 10px;
+}
 
 .background-yellow {
     background: #FFFB98;
@@ -370,6 +407,17 @@ p.footer {
 
 
 
+
+.fb-location {
+    margin-left: -22px;
+}
+
+.fb-locatio-new {
+    margin-left: -10px;
+}
+
+
+
 .it-menu-conf {
     float: right;
     text-transform: none;    
@@ -397,11 +445,9 @@ p.footer {
 }
 
 .box-login {
-    position: absolute;
-    top: 30%;
-    left: 35%;
-    right: 35%;
-    width: 26.5%;
+    padding-top: 220px;
+    margin-left: 32%;
+    margin-right: 32%;
 }
 
 .espacament {
@@ -451,10 +497,6 @@ p.footer {
         display:none;
     }
 
-    .fb-button {
-        float: none;
-    }
-
     .general-search-form {
         padding-top: 4%;
     }
@@ -468,10 +510,6 @@ p.footer {
 @media only screen and (min-width : 0px) {
     .pipe {
         display:none;
-    }
-
-    .fb-button {
-        float: none;
     }
 
     .general-search-form {
@@ -504,10 +542,6 @@ p.footer {
         display:none;
     }
 
-    .fb-button {
-        float: none;
-    }
-
     .general-search-form {
         padding-top: 4%;
     }
@@ -536,10 +570,6 @@ p.footer {
         display: inherit;
     }
 
-    .fb-button {
-        float: left;
-    }
-
     .general-search-form {
         padding-top: 18%;
     }
@@ -559,10 +589,6 @@ p.footer {
 
     .pipe {
         display:inherit;
-    }
-
-    .fb-button {
-        float: left;
     }
 
     .general-search-form {
@@ -586,7 +612,7 @@ p.footer {
 
 .orig-dest {
     font-size: 18px;
-    padding-top: 85px;
+    padding-top: 70px;
 }
 
 .td1-teste {
@@ -597,25 +623,51 @@ p.footer {
     width: 100%;
 }
 
-.preco-trip {
+.price-trip {
     float: right;
-    font-size: 30px;
+    font-size: 27px;
     padding-top: 70px;
     padding-left: 42%
 }
 
+.btn-facebook {
+    background: #3b5998;
+    color: white;
+}
+
+.btn-facebook:hover {
+    background: #354F87;
+}
+
 .pos-buttons {
+    text-align: center;
+}
+
+.cp-facebook {
     float: right;
 }
 
+.pos-buttons2 {
+    padding-top: 10px;
+}
+
 .per-people{
-    font-size: 20px;
+    font-size: 17px;
 }
 
 /* Details page */
 
 .detail-title {
+    padding-bottom: 20px;
     font-size: 30px;
+}
+
+.container img {
+    position: relative;
+    width: 95%;
+    height: 400px;
+    margin-left: -13px;
+    padding-bottom: 20px;
 }
 
 .details-orig-dest {
@@ -624,9 +676,24 @@ p.footer {
 }
 
 .general-trip-detail {
-    padding-top: 115px;
+    padding-top: 125px;
     margin-left: 10%;
     margin-right: 10%;
+    padding-bottom: 30px;
     text-align: justify;
     min-height: 100%;
+}
+
+.box-note {
+    background-color: #9B9A9A;
+    height: 17.5px;
+    padding-left: 4px;
+    border-radius: 3px;
+    display: inline;
+    margin-right: 4px;
+}
+
+.note-text {
+    font-size: 13px;
+    text-align: center;
 }

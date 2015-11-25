@@ -1,14 +1,18 @@
-<p>
-  <strong>Data</strong>
-  <%= @post.post_date %>
-</p>
+<div class="box-comment">
+	<div>
+		<div class="col-md-6 post-name">
+		  <i class="fa fa-user fa-flip-horizontal"></i>
+		  <%= post.name %>
+		</div>
 
-<p>
-  <strong>Nome</strong>
-  <%= @post.nome %>
-</p>
+		<div class="col-md-6 text-right">
+			  <i class="fa fa-clock-o"></i>
+			  <%= post.created_at.strftime("comentado em %m %b,  %Y - %H:%M") %>
+		</div>
+	</div>
 
-<p>
-  <strong>Mensagem</strong>
-  <%= @post.message %>
-</p>
+	<div class="col-md-12 post-message">
+	  <i class="fa fa-comment fa-2x fa-flip-horizontal"></i>
+	  <%= post.opinion_local %>
+	</div>
+</div>

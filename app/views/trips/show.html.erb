@@ -1,14 +1,19 @@
 <div class='general-trip-detail'>
 
   <% render 'trips/form' %>
-  <p class="detail-title">
+  <div class="detail-title">
     <strong><%= @trip.name %></strong>
-  </p>
-  
-  <p>
-    <%= image_tag @trip.avatar.url(:original) %>
-  </p>
+    <div class="cp-facebook">
+      <%= link_to "https://www.facebook.com/sharer/sharer.php?u=" + request.original_url, :target => "_blank", :style=>"color:#fff;", class: "btn btn-facebook"  do %>
+      <i class="fa fa-facebook"></i>
+        | Compartilhar
+      <% end %>
+    </div> 
+  </div>
 
+  <div class="container">
+    <%= image_tag @trip.avatar.url(:original) %>
+  </div>
   <div class="details-orig-dest">
     <i class="fa fa-plane"></i>
     <%= @trip.origin %><br>
@@ -16,20 +21,25 @@
     <%= @trip.destination %>
   </div>
 
-  <div class="">
+  <div>
     <i class="fa fa-arrow-right"></i>
     <%= @trip.in_date %>
     <i class="fa fa-arrow-left"></i>
     <%= @trip.out_date %>
   </div>
 
-  <div>
+  <div class="trip-description">
     <%= @trip.description %>
   </div>
 
-  <hr>
-  <% @trip.posts.each do |post| %>
-      <%= post.message %>
+  <% if not @trip.posts.count == 0 %>
+    <div class="comments-title">
+      <i class="fa fa-2x fa-comments"></i>
+      Comentários
+    </div>
+  
+    <% @trip.posts.each do |post| %>
+        <%= render :partial => 'posts/show', :locals => {:post => post} %>
+    <% end %>
   <% end %>
-
 </div>

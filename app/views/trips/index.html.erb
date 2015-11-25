@@ -1,3 +1,4 @@
+88                          
 <div class='panel panel-default general-form-trips'>
   <div class="row">
     <div class="col-xs-4">
@@ -26,8 +27,11 @@
 
                         <div class="orig-dest">
                           <i class="fa fa-building"></i>
-                          <%= trip.company.name %> 
-                          
+                            <%= trip.company.name %>
+                          <div class="box-note note-text">
+                              <%= trip.company.note_average %>
+                            </div>
+                            
                           <i class="infos" ><%= link_to '[ver infos]', trip %></i>
                           <br>
                           <i class="fa fa-plane"></i>
@@ -44,7 +48,7 @@
                         </div>
                       </div>
 
-                      <div class="col-xs-6">
+                      <div class="col-xs-6 text-right">
                         <div class="btn-group pos-buttons" role="group" aria-label="...">
                           <% if user_signed_in? %>
                             <%= link_to user_request_path(:trip_id => trip.id, :out_date => trip.out_date), method: :post,:class => 'btn btn-default btn-xs', :data => { :confirm => 'Se você confirmar mandaremos alguns dos seus dados pessoais de cadastro (Nome, Telefone e Email) para a agência de viagem entrar em contato. Confirma?' } , remote: true do %>
@@ -54,8 +58,8 @@
                             <%= link_to 'Detalhar', trip, :class => 'btn btn-default btn-xs'%>
                         </div>
                         
-                        <div class="preco-trip">
-                          R$ <strong><%= trip.price %></strong>
+                        <div class="price-trip">
+                          R$ <strong><%= number_with_precision(trip.price, :precision => 2) %></strong>
                           <div class="per-people">por pessoa</div>
                         </div>
                       </div>

@@ -13,15 +13,15 @@ class PostsController < ApplicationController
     @posts = Post.where("trip_id = ?", @post.trip_id)
 
     @trip = Trip.find(@post.trip_id)
-    Trip.update(@trip, average_points: @posts.average(:point))
+    Trip.update(@trip, average_points: @posts.average(:note))
 
     @company = Company.find(@trip.company.id)
-    Company.update(@company, points: @company.trips.average(:average_points))    
+    Company.update(@company, note_average: @company.trips.average(:average_points))    
     
     respond_to do |format|
       if @post.save
 
-        format.html { redirect_to @post, notice: 'Person was successfully created.' }
+        format.html { redirect_to current_user, notice: 'Person was successfully created.' }
         format.json { render action: 'show', status: :created, location: @person }
         # added:
         format.js   { render action: 'show', status: :created, location: @person }
@@ -41,6 +41,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:id, :trip_id, :point, :name, :message)
+      params.require(:post).permit(:id, :trip_id, :note, :name, :opinion_local, :opinion_best, :opinion_worst)
     end
 end

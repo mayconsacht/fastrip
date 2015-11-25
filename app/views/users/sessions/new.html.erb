@@ -23,18 +23,16 @@
       <% end -%>
 
       <div class="actions">
-        <div class="row col-lg-offset-2 buttons-login">
-            <div class="col-lg-4">
-                    <%= f.submit "Entrar", :class => 'btn btn-info' %>       
-            </div>
-            <div class="pipe-login"> ou </div>
-            <div class="col-lg-4">
-                <%= link_to "", user_omniauth_authorize_path(:facebook), :class => "btn botao-fb" %>
-            </div>
-        </div>
+
+          <%= f.submit "Entrar", :class => 'btn btn-info' %>       
       </div>
-  
+
+      <div class="fb-location col-md-12">
+        <%= link_to "", user_omniauth_authorize_path(:facebook), :class => "btn fb-button" %>
+      </div>
   <% end %>
 
-  <%= render "users/shared/links" %>
+  <div>
+    <%= render "users/shared/links" %>
+  </div>
 </div>

@@ -42,17 +42,12 @@
       </div>
 
       <div class="actions">
-        <div class="row col-md-offset-2 buttons-login">
-            <div class="col-md-3">
-                    <%= f.submit "Cadastrar", :class => 'btn btn-info' %>       
-            </div>
-            <div class="pipe-register"> ou </div>
-            <div class="col-md-4">
-                <%= link_to "", user_omniauth_authorize_path(:facebook), :class => "btn botao-fb" %>
-            </div>
-        </div>
+          <%= f.submit "Cadastrar", :class => 'btn btn-info' %> 
       </div>
 
+      <div class="fb-locatio-new"> 
+          <%= link_to "", user_omniauth_authorize_path(:facebook), :class => "btn fb-button col-md-12" %>
+      </div>
     <% end %>
 
     <%= render "users/shared/links" %>

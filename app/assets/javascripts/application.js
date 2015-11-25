@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require bootstrap.min
-//= require freelancer
+//= require fastrip
 //= require cbpAnimatedHeader
 //= require classie
 //= require jquery_ujs

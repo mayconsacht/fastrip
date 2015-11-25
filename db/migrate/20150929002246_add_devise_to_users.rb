@@ -2,11 +2,11 @@ class AddDeviseToUsers < ActiveRecord::Migration
   def self.up
     change_table(:users) do |t|
 
-      t.string :name
-      t.string :email
-      t.string :cpf
-      t.string :phone
-      t.string :andress
+      t.string :name, limit: 40
+      t.string :email, limit: 40
+      t.string :cpf, limit: 18
+      t.string :phone, limit: 11
+      t.string :andress 
       t.string :access_token
       t.string :photo_url
       
@@ -28,8 +28,8 @@ class AddDeviseToUsers < ActiveRecord::Migration
       t.string   :last_sign_in_ip
 
       t.string   :user_name
-      t.string   :oauth_token
       t.string   :token_secret
+      t.string   :oauth_token
       
     end
 
@@ -42,7 +42,6 @@ class AddDeviseToUsers < ActiveRecord::Migration
     add_index :users, :access_token
     add_index :users, :photo_url
     add_index :users, :user_name
-    add_index :users, :oauth_token
     add_index :users, :token_secret
   end
 

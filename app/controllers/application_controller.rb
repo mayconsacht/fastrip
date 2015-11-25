@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
     devise_parameter_sanitizer.for(:sign_up) << :cpf
-    devise_parameter_sanitizer.for(:sign_up) << :points 
+    devise_parameter_sanitizer.for(:sign_up) << :note_average 
     devise_parameter_sanitizer.for(:sign_up) << :phone
     devise_parameter_sanitizer.for(:sign_up) << :andress
     devise_parameter_sanitizer.for(:sign_up) << :cnpj

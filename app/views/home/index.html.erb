@@ -15,13 +15,15 @@
                     </p>
                 
                     <% if not user_signed_in? %>
-                        <div class="row text-center">
-                            <div class="col-md-6">
+                        <div class="text-center">
+                            <div class="col-md-12">
                                     <%= link_to "Cadastrar-se", new_user_registration_path, :class => 'btn submit-buttons'  %>       
                             </div>
-                            <div class="pipe"> ou você pode</div>
-                            <div class="col-md-6">
-                                <%= link_to "", user_omniauth_authorize_path(:facebook), :class => "btn fb-button" %>
+                            <div class="col-md-12 pos-buttons2">
+                                <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-facebook"  do %>
+                                    <i class="fa fa-facebook"></i>
+                                    | Conectar-se com Facebook
+                                  <% end %>
                             </div>
                         </div>
                     <% end %>

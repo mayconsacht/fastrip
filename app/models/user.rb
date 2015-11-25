@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
 
-    has_many :trips
+    has_and_belongs_to_many :trips
     has_many :user_requests
-    has_many :company, :through => :trips
     
     devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable, :omniauthable,
