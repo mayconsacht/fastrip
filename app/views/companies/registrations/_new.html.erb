@@ -28,6 +28,12 @@
       </div>
   </div>
 
+  <div class="row control-group">
+      <div class="field col-md-12 form-group controls">
+          <%= f.text_area :description, class: 'form-control', placeholder: 'Descrição sobre a empresa' %>
+      </div>
+  </div>
+
   <div class="row">
       <div class="field col-md-6 form-group controls col-md-offset-2 pass-one">
           <%= f.password_field :password, class: 'form-control', placeholder: 'Senha (minimo de 8 caracteres)', autocomplete: "off" %>

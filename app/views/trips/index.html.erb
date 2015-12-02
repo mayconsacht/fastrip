@@ -32,7 +32,7 @@
                               <%= trip.company.note_average %>
                             </div>
                             
-                          <i class="infos" ><%= link_to '[ver infos]', trip %></i>
+                          <i class="infos" ><%= link_to '[ver infos]', detail_company_path(:id => trip.company.id), method: :post %></i>
                           <br>
                           <i class="fa fa-plane"></i>
                           <%= trip.origin %><br>
@@ -59,7 +59,7 @@
                         </div>
                         
                         <div class="price-trip">
-                          R$ <strong><%= number_with_precision(trip.price, :precision => 2) %></strong>
+                          R$ <strong><%= number_with_precision(trip.price, :precision => 0) %></strong>
                           <div class="per-people">por pessoa</div>
                         </div>
                       </div>

@@ -8,37 +8,65 @@
       <tbody>
         <% @requests.each do |request| %>
           <tr>
-            <td><%= image_tag request.trip.avatar.url(:thumb), :class => 'thumbnail' %></td>
-            <td><%= request.trip.name %></td>
-            <td><%= request.trip.category %></td>
-            <td><%= request.trip.origin %></td>
-            <td><%= request.trip.destination %></td>
-            <td><%= request.trip.price %></td>
-            <td><%= request.trip.in_date %></td>
-            <td><%= request.trip.out_date %></td>
-            <td><%= request.status %></td>
-            <td><div class="btn-group" role="group" aria-label="...">
-              <% if request.trip.out_date.past? %>
-                <%= link_to 'Avaliar', "#new_post_modal_#{request.trip.id}", 'data-toggle' => 'modal', :class => 'btn btn-default btn-xs'%>
-              <% end %>
-              <%= link_to 'Detalhar', request.trip, :class => 'btn btn-default btn-xs'%>
-              <%= link_to 'Cancelar', request.trip, method: :delete, :class => 'btn btn-default btn-xs', data: { confirm: 'Tem certeza que deseja deletar a viagem?' } %>
-            </div></td>
+            <td class="td1-teste"><%= image_tag request.trip.avatar.url(:thumb), :class => 'thumbnail' %></td>
+            <td>
+            <div class="title-trip">
+              <strong><%= request.trip.name %></strong>
+            </div>
+            <div class="orig-dest">
+              <i class="fa fa-building"></i>
+                <%= request.trip.company.name %>
+              <div class="box-note note-text">
+                  <%= request.trip.company.note_average %>
+                </div>
+                
+              <i class="infos" ><%= link_to '[ver infos]', detail_company_path(:id => request.trip.company.id), method: :post %></i>
+              <br>
+              <i class="fa fa-plane"></i>
+              <%= request.trip.origin %><br>
+              <i class="fa fa-plane fa-rotate-90"></i>
+              <%= request.trip.destination %>
+            </div>
+              <div class="">
+                <i class="fa fa-arrow-right"></i>
+                <%= request.trip.in_date %>
+                <i class="fa fa-arrow-left"></i>
+                <%= request.trip.out_date %>
+              </div>
+            </td>
+
+            <td>Status: <%= request.status %></td>
+            <td class="text-right">
+              <div class="btn-group" role="group" aria-label="...">
+                <% if request.trip.out_date.past? %>
+                  <%= link_to 'Avaliar', "#new_post_modal_#{request.trip.id}", 'data-toggle' => 'modal', :class => 'btn btn-default btn-xs'%>
+                <% end %>
+                <%= link_to 'Detalhar', request.trip, :class => 'btn btn-default btn-xs'%>
+                <%= link_to 'Cancelar', request.trip, method: :delete, :class => 'btn btn-default btn-xs', data: { confirm: 'Tem certeza que deseja deletar a viagem?' } %>
+              </div>
+            </td>
           </tr>
 
           <div class="modal fade" id="new_post_modal_<%= request.trip.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
             <div class="modal-dialog">
               <div class="modal-content">
+
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title" id="myModalLabel">Avalie sua experiencia com está agência de viagem!</h4>
+                  <h4 class="modal-title" id="myModalLabel">
+                    Avalie sua experiencia com está agência de viagem!
+                  </h4>
                 </div>
+
                 <div class="modal-body">
                   <%= render :partial => 'posts/form', :locals => {:request => request}, modal: true %>
                 </div>
+
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
+
               </div>
             </div>
           </div>

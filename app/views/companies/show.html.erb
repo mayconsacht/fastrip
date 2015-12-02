@@ -8,19 +8,55 @@
         <tbody>
           <% @company.trips.each do |trip| %>
             <tr>
-              <td><%= image_tag trip.avatar.url(:thumb), :class => 'thumbnail' %></td>
-              <td><%= trip.name %></td>
-              <td><%= trip.category %></td>
-              <td><%= trip.origin %></td>
-              <td><%= trip.destination %></td>
-              <td><%= trip.price %></td>
-              <td><%= trip.in_date %></td>
-              <td><%= trip.out_date %></td>
-              <td><div class="btn-group" role="group" aria-label="...">
-                <%= link_to 'Detalhar', trip, :class => 'btn btn-default btn-xs'%>
-                <%= link_to 'Editar', edit_trip_path(trip), :class => 'btn btn-default btn-xs' %>
-                <%= link_to 'Cancelar', trip, method: :delete, :class => 'btn btn-default btn-xs', :data => { :confirm => 'Tem certeza que deseja deletar a viagem?' } %>
-              </div></td>
+                <td class="td1-teste">
+                  <%= image_tag trip.avatar.url(:thumb), :class => 'thumbnail' %>
+                </td>
+                <td class="td2-teste">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <div class="title-trip">
+                        <%= trip.name %>
+                      </div>
+
+                      <div class="orig-dest">
+                        <i class="fa fa-building"></i>
+                          <%= trip.company.name %>
+                        <div class="box-note note-text">
+                            <%= trip.company.note_average %>
+                          </div>
+                          
+                        <i class="infos" ><%= link_to '[ver infos]', detail_company_path(:id => trip.company.id), method: :post  %></i>
+                        <br>
+                        <i class="fa fa-plane"></i>
+                        <%= trip.origin %><br>
+                        <i class="fa fa-plane fa-rotate-90"></i>
+                        <%= trip.destination %>
+                      </div>
+
+                      <div class="">
+                        <i class="fa fa-arrow-right"></i>
+                        <%= trip.in_date %>
+                        <i class="fa fa-arrow-left"></i>
+                        <%= trip.out_date %>
+                      </div>
+                    </div>
+                    <div class="col-md-1 text-right">
+                    </div>
+                    <div class="col-md-5 text-right">
+                      <div class="btn-group " role="group" aria-label="...">
+                        <% if user_signed_in? %>
+                          <%= link_to user_request_path(:trip_id => trip.id, :out_date => trip.out_date), method: :post,:class => 'btn btn-default btn-xs', :data => { :confirm => 'Se você confirmar mandaremos alguns dos seus dados pessoais de cadastro (Nome, Telefone e Email) para a agência de viagem entrar em contato. Confirma?' } , remote: true do %>
+                              Tenho interesse
+                            <% end %>
+                        <% end %>
+                          <%= link_to 'Detalhar', trip, :class => 'btn btn-default btn-xs'%>
+                      </div>
+                      
+                      <div class="price-trip">
+                        R$ <strong><%= number_with_precision(trip.price, :precision => 2) %></strong>
+                        <div class="per-people">por pessoa</div>
+                      </div>
+                </td>
             </tr>
           <% end %>
         </tbody>

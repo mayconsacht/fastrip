@@ -1,0 +1,38 @@
+<div class='general-trip-detail'>
+
+  <div class="detail-title">
+    <strong><%= @company.name %></strong>
+    <div class="cp-facebook">
+      <%= link_to "https://www.facebook.com/sharer/sharer.php?u=" + request.original_url, :target => "_blank", :style=>"color:#fff;", class: "btn btn-facebook"  do %>
+      <i class="fa fa-facebook"></i>
+        | Compartilhar
+      <% end %>
+    </div> 
+  </div>
+  Média de satsfação dos clientes
+  <div class="box-note-detail note-text-detail">
+     <p><%= @company.note_average %></p>
+  </div>
+
+  <div class="">
+
+     <p><%= @company.description %></p>
+  </div>
+
+  <% @teste = false %>
+  <% @company.trips.each do |trip| %>
+    <% if not trip.posts.count == 0 and @teste == false%>
+      
+      <div class="comments-title">
+        <i class="fa fa-2x fa-comments"></i>
+        Comentários
+      </div>
+      
+      <% @teste = true %> 
+    <% end %>
+
+    <% trip.posts.each do |post| %>
+      <%= render :partial => 'posts/show_opinions', :locals => {:post => post} %>
+    <% end %>
+  <% end %>
+</div>

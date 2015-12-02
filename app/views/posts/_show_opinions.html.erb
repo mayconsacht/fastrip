@@ -1,0 +1,24 @@
+<div class="box-comment">
+  <div>
+    <div class="col-md-6 post-name">
+      <i class="fa fa-user fa-flip-horizontal"></i>
+      <%= post.name %>
+
+      <div class="box-note note-text">
+          <%= post.note %>
+      </div>
+    </div>
+
+    <div class="col-md-6 text-right">
+        <i class="fa fa-clock-o"></i>
+        <%= post.created_at.strftime("comentado em %m %b,  %Y - %H:%M") %>
+    </div>
+  </div>
+
+  <div class="col-md-12 post-message">
+    <strong>Pontos positivos</strong>
+    <p><%= post.opinion_best %></p>
+    <strong>Pontos negativos</strong>
+    <p><%= post.opinion_worst %></p>
+  </div>
+</div>

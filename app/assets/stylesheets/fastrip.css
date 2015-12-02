@@ -223,7 +223,7 @@ p.company {
 }
 
 .company-register-form {
-    padding-top: 7%;
+    padding-top: 3%;
 }
 
 .company-register-text {
@@ -258,12 +258,10 @@ p.about-text {
 }
 
 .general-trip {
-    position: absolute;
-    top: 19%;
-    left: 28%;
-    right: 13%;
-    width: 42%;
-    height: 200px;
+    padding-top: 118px;
+    margin-left: 15%;
+    margin-right: 15%;
+    min-height: 100%;
 }
 
 /* footer */
@@ -405,7 +403,9 @@ p.footer {
     padding-top: 2%;
 }
 
-
+.img-trip-detail {
+    padding-right: 13%;
+}
 
 
 .fb-location {
@@ -498,7 +498,7 @@ p.footer {
     }
 
     .general-search-form {
-        padding-top: 4%;
+        padding-top: 7%;
     }
 
     .general-login-on-text {
@@ -513,7 +513,7 @@ p.footer {
     }
 
     .general-search-form {
-        padding-top: 4%;
+        padding-top: 7%;
     }
 
     .general-login-on-text {
@@ -571,7 +571,7 @@ p.footer {
     }
 
     .general-search-form {
-        padding-top: 18%;
+        padding-top: 15%;
     }
 
     .general-login-on-text {
@@ -592,7 +592,7 @@ p.footer {
     }
 
     .general-search-form {
-        padding-top: 18%;
+        padding-top: 15%;
     }
 
     .general-login-on-text {
@@ -626,8 +626,8 @@ p.footer {
 .price-trip {
     float: right;
     font-size: 27px;
-    padding-top: 70px;
-    padding-left: 42%
+    margin-top: 70px;
+    margin-left: 42%
 }
 
 .btn-facebook {
@@ -696,4 +696,28 @@ p.footer {
 .note-text {
     font-size: 13px;
     text-align: center;
+}
+
+.box-note-detail {
+    background-color: #9B9A9A;
+    height: 25.5px;
+    padding-left: 4px;
+    border-radius: 3px;
+    display: inline;
+    margin-right: 4px;
+}
+
+.note-text-detail {
+    font-size: 18px;
+    text-align: center;
+}
+
+.drop-down-category {
+    background-color: white;
+    color: #AEB7BF;
+}
+
+.drop-down-category:hover, .drop-down-category:focus {
+    background-color: white;
+    color: black;
 }

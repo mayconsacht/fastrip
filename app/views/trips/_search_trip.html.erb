@@ -1,6 +1,13 @@
 <%= form_tag(trips_path, :method => "get") do %>
 
   <div class="row">
+    <div class=" col-xs-12 form-group controls">
+        <%= select(Trip, :category, options_for_select(["Hotéis","Passagens","Pacotes","Tickets e Transfers","Cruzeiros","Ônibus","Outros"]), 
+        {prompt: 'Selecione uma categoria'}, class: 'btn dropdown-toggle drop-down-category col-xs-12', data: 'dropdown') %>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="field col-xs-12 form-group controls col-lg-offset-2 pass-one">
         <%= text_field_tag :with_origin, nil, {class: 'form-control', placeholder: 'Origem'} %>
     </div>
@@ -29,12 +36,6 @@
       <%= text_field_tag :with_name, nil, {class: 'form-control', placeholder: 'Nome'}  %>
     </div>
   </div>
-<!--
-  <div class="row">
-    <div class="field col-xs-12 form-group controls col-lg-offset-2 pass-one">
-      <%= text_field_tag :in_category, nil, {class: 'form-control', placeholder: 'Categoria'} %>
-    </div>
-  </div>
--->
+
   <%= submit_tag "Buscar", { :class => 'btn btn-info'} %>
 <% end %>

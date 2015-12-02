@@ -16,7 +16,7 @@ gem 'protected_attributes'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'devise'
-gem "paperclip", "~> 4.3"
+gem 'paperclip', '~> 4.3'
 
 group :development, :test do
   gem 'byebug'

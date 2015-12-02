@@ -5,7 +5,7 @@ class Company < ActiveRecord::Base
 	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-	attr_accessible :note_average, :name, :email, :cnpj, :phone, :andress, :password, :access_token
+	attr_accessible :note_average, :name, :email, :cnpj, :phone, :andress, :password, :access_token, :description
 
     validates_presence_of :email
     validates_uniqueness_of :email

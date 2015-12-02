@@ -5,10 +5,11 @@ class AddDeviseToCompanies < ActiveRecord::Migration
       t.string :email,              null: false, default: "", limit: 40
       t.string :encrypted_password, null: false, default: ""
       t.string :name, limit: 40
-      t.string :cnpj, limit: 15
+      t.string :cnpj, limit: 18
       t.string :phone, limit: 11
       t.string :andress
       t.string :access_token
+      t.text :description
       t.float  :note_average
 
       t.string   :reset_password_token

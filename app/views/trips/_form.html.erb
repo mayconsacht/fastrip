@@ -37,7 +37,9 @@
 
   <div class="row">
     <div class="field col-xs-6 form-group controls col-lg-offset-2 pass-one">
-      <%= f.date_select :in_date, start_year:  2015, class: 'form-control', placeholder: 'Data de Saída', order: [:day, :month, :year]  %>
+      <span class="dropdown-toggle">
+      <%= f.date_select :in_date, start_year:  2015, order: [:day, :month, :year], :html=>{:class => "dropdown-toggle"}  %>
+      </span>
     </div>
 
     <div class="field col-xs-6 form-group controls">
